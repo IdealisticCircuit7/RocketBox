@@ -1,0 +1,16 @@
+.rb-asset-icon { position:relative; display:inline-block; width:var(--asset-icon-size,28px); height:var(--asset-icon-size,28px); flex:none; vertical-align:middle; pointer-events:none; line-height:0; isolation:isolate; }
+.rb-asset-icon > .rb-asset-icon__main { display:block; width:100%; height:100%; object-fit:contain; filter:none; }
+.rb-asset-icon > .rb-asset-icon__origin { position:absolute; right:-2px; bottom:-2px; display:block; width:var(--asset-origin-size,13px); height:var(--asset-origin-size,13px); object-fit:contain; border-radius:3px; background:var(--panel,#101b2b); box-shadow:0 0 0 1px var(--line,#344358); }
+.rb-asset-icon > [hidden] { display:none; }
+.record-name > .record-name__icon:has(.rb-asset-icon) { width:28px; height:28px; }
+.mode-grid .record-name > .record-name__icon:has(.rb-asset-icon) { width:48px; height:48px; }
+.mode-grid .record-name .rb-asset-icon { --asset-icon-size:48px; --asset-origin-size:16px; }
+.explorer-records.mode-grid { grid-auto-rows:max-content; }
+.studio-preview__file-icon > .rb-asset-icon { --asset-icon-size:40px; --asset-origin-size:15px; }
+.studio-inspector__header h3 { display:flex; align-items:center; gap:8px; }
+.studio-inspector__header h3 > .rb-asset-icon { --asset-icon-size:36px; --asset-origin-size:14px; }
+.record-heading > .rb-asset-icon { --asset-icon-size:40px; --asset-origin-size:15px; }
+.library-list .record-heading > .rb-asset-icon { --asset-icon-size:28px; --asset-origin-size:13px; }
+.trash-record .rb-asset-icon { --asset-icon-size:28px; }
+.studio-inspector__preview-glyph > .rb-asset-icon { --asset-icon-size:40px; --asset-origin-size:15px; }
+.rb-viewer p > .rb-asset-icon { --asset-icon-size:28px; margin-inline-end:7px; }

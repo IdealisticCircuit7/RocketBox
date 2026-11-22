@@ -1,0 +1,52 @@
+[
+    {
+        "id": "asset_001",
+        "nome": "Lucy_BaseMesh",
+        "caminho": "D:/OCSIS_Vault/Projetos/DOW/Personagens/Lucy_BaseMesh.blend",
+        "formato": ".blend",
+        "categoria": "Personagem",
+        "subcategoria": "Protagonista",
+        "status_rigging": "Nao Possui Rig",
+        "engine_foco": "Blender"
+    },
+    {
+        "id": "asset_002",
+        "nome": "Lucy_Tactical_Rigged",
+        "caminho": "D:/OCSIS_Vault/Projetos/DOW/Personagens/Lucy_Tactical_Rigged.fbx",
+        "formato": ".fbx",
+        "categoria": "Personagem",
+        "subcategoria": "Protagonista",
+        "status_rigging": "Possui Rig",
+        "engine_foco": "Unreal Engine 5"
+    },
+    {
+        "id": "asset_003",
+        "nome": "BP_Coleta_Suprimentos_Modular",
+        "caminho": "D:/OCSIS_Vault/Projetos/DOW/Sistemas/BP_Coleta_Suprimentos_Modular.uasset",
+        "formato": ".uasset",
+        "categoria": "Blueprint",
+        "subcategoria": "Mecanica Core",
+        "status_rigging": "Nao se aplica",
+        "engine_foco": "Unreal Engine 5"
+    },
+    {
+        "id": "asset_004",
+        "nome": "Viatura_Tatica_Blindada",
+        "caminho": "D:/OCSIS_Vault/Assets/Veiculos/Viatura_Tatica_Blindada.fbx",
+        "formato": ".fbx",
+        "categoria": "Veiculo",
+        "subcategoria": "Carro Terrestre",
+        "status_rigging": "Possui Rig",
+        "engine_foco": "Qualquer"
+    },
+    {
+        "id": "asset_005",
+        "nome": "Anim_CombatPack",
+        "caminho": "D:/OCSIS_Vault/Assets/Animacoes/CombatPack_Custom.blend",
+        "formato": ".blend",
+        "categoria": "Ferramenta",
+        "subcategoria": "Pack de Animacao",
+        "status_rigging": "Possui Rig",
+        "engine_foco": "Blender"
+    }
+]

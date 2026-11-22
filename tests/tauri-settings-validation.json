@@ -1,0 +1,20 @@
+{
+  "identifier": "com.ocsis.rocketbox.settings-validation",
+  "build": {
+    "beforeDevCommand": null,
+    "devUrl": "http://127.0.0.1:1422/#settings"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "RocketBox - Validacao de Configuracoes",
+        "dragDropEnabled": false,
+        "width": 1280,
+        "height": 800,
+        "minWidth": 640,
+        "minHeight": 480
+      }
+    ]
+  }
+}

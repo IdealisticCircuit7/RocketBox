@@ -1,0 +1,151 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intent",
+    "entities",
+    "referencesPrior",
+    "requiresClarification",
+    "proposedTool"
+  ],
+  "properties": {
+    "intent": {
+      "enum": [
+        "general_chat",
+        "search_assets",
+        "get_asset_details",
+        "analyze_asset",
+        "organize_assets",
+        "manage_tags",
+        "create_folder",
+        "get_project_info",
+        "clarification_needed",
+        "trash_records",
+        "restore_records",
+        "edit_records"
+      ]
+    },
+    "entities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "query",
+        "assetName",
+        "folderName",
+        "project",
+        "format",
+        "software",
+        "dateHint",
+        "tag"
+      ],
+      "properties": {
+        "query": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "assetName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "folderName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "format": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "software": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dateHint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sourceFolderName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "targetFolderName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "newName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "newCategory": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "referencesPrior": {
+      "type": "boolean"
+    },
+    "requiresClarification": {
+      "type": "boolean"
+    },
+    "proposedTool": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nome da ferramenta sugerida para atender ao pedido, mesmo que a execução ainda dependa de aprovação; null somente para papo ou pedido ambíguo.",
+      "enum": [
+        "searchAssets",
+        "listFolders",
+        "getAssetDetails",
+        "analyzeAsset",
+        "createFolder",
+        "assignTags",
+        "removeTags",
+        "moveAssetRecord",
+        "moveFolder",
+        "getCurrentContext",
+        "listTags",
+        "getAnalysisResult",
+        "moveToTrash",
+        "restoreRecord",
+        "listTrash",
+        "updateAssetRecord",
+        "updateAssetCategory",
+        "renameFolder",
+        null
+      ]
+    }
+  }
+}

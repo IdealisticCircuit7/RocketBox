@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+  "modelName": "nautia:0.1",
+  "baseModel": "qwen3.5:4b",
+  "endpoint": "http://127.0.0.1:11434",
+  "temperature": 0.4,
+  "numCtx": 8192,
+  "numPredict": 768,
+  "keepAlive": "10m",
+  "autoConnect": true,
+  "autoStartLocalService": true,
+  "recentTurns": 14,
+  "historyCharBudget": 8500,
+  "summaryCharBudget": 1600,
+  "toolResultCharBudget": 5500
+}

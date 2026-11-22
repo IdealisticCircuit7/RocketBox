@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64" fill="none">
+<title>OBJ triangular mesh — RocketBox</title>
+<defs>
+  <linearGradient id="cyan" x1="12" y1="8" x2="50" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#CBFAFF"/><stop offset=".45" stop-color="#5BE3FA"/><stop offset="1" stop-color="#289CCF"/></linearGradient>
+  <linearGradient id="blue" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse"><stop stop-color="#86DAFF"/><stop offset=".48" stop-color="#398DFA"/><stop offset="1" stop-color="#5462CF"/></linearGradient>
+  <linearGradient id="purple" x1="12" y1="12" x2="52" y2="54" gradientUnits="userSpaceOnUse"><stop stop-color="#A9DEFF"/><stop offset=".55" stop-color="#8E82EA"/><stop offset="1" stop-color="#6950AE"/></linearGradient>
+  <linearGradient id="silver" x1="12" y1="8" x2="52" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#F1F7FD"/><stop offset=".5" stop-color="#BBCAD8"/><stop offset="1" stop-color="#73849B"/></linearGradient>
+  <linearGradient id="metal" x1="16" y1="14" x2="48" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#F3FCFF"/><stop offset=".25" stop-color="#BFD8E9"/><stop offset=".46" stop-color="#667C9D"/><stop offset=".52" stop-color="#273A59"/><stop offset=".72" stop-color="#8799B8"/><stop offset="1" stop-color="#3F497B"/></linearGradient>
+  <linearGradient id="paper" x1="15" y1="8" x2="49" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#263D55"/><stop offset="1" stop-color="#142039"/></linearGradient>
+</defs>
+<path d="M32 8 53 25 44 52 20 52 11 25Z" fill="url(#paper)" stroke="url(#blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 8 32 31 11 25 M32 31 53 25 M32 31 44 52 M32 31 20 52 M20 52 32 8 M44 52 32 8" fill="none" stroke="url(#blue)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="8" r="1.65" fill="#B5E9FF" stroke="#2B75C8" stroke-width="0.6"/><circle cx="53" cy="25" r="1.65" fill="#B5E9FF" stroke="#2B75C8" stroke-width="0.6"/><circle cx="44" cy="52" r="1.65" fill="#B5E9FF" stroke="#2B75C8" stroke-width="0.6"/><circle cx="20" cy="52" r="1.65" fill="#B5E9FF" stroke="#2B75C8" stroke-width="0.6"/><circle cx="11" cy="25" r="1.65" fill="#B5E9FF" stroke="#2B75C8" stroke-width="0.6"/><circle cx="32" cy="31" r="1.65" fill="#B5E9FF" stroke="#2B75C8" stroke-width="0.6"/>
+</svg>

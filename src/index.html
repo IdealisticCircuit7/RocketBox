@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#04060A">
+  <title>OCSIS RocketBox — Convés</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/branding/favicon.png">
+  <link rel="icon" type="image/x-icon" href="./assets/branding/favicon.ico">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./cinematic.css">
+  <link rel="stylesheet" href="./ui.css">
+  <link rel="stylesheet" href="./nautia.css">
+  <link rel="stylesheet" href="./icons.css">
+  <link rel="stylesheet" href="./library.css">
+  <link rel="stylesheet" href="./settings.css">
+  <link rel="stylesheet" href="./studio.css">
+  <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+<div id="splash-screen" class="splash-screen" role="status" aria-label="Iniciando RocketBox">
+  <div class="orbital-scene" aria-hidden="true"><div class="planet"></div><div class="planet-ring"></div><div class="rocket-orbit"><svg viewBox="0 0 32 48"><path d="M16 2C5 13 7 25 9 32h14c2-7 4-19-7-30Z" fill="#dbe9ff"/><circle cx="16" cy="19" r="5" fill="#00d4ff"/><path d="m9 26-7 13 9-5m12-8 7 13-9-5" fill="#9d4edd"/><path d="m12 34 4 13 4-13" fill="#00d4ff"/></svg></div></div>
+  <img class="splash-logo" src="./assets/branding/rocketbox-logo.png" alt="RocketBox by OCSIS">
+  <p class="splash-caption">PREPARANDO SEU UNIVERSO CRIATIVO<span>...</span></p>
+</div>
+<div id="space-wallpaper" class="space-wallpaper" aria-hidden="true">
+  <img class="wallpaper-scene" src="./assets/branding/launch-wallpaper-close-extended.png" alt="" fetchpriority="high">
+</div>
+<div id="app-container" class="layout-left">
+  <nav class="nav-panel" aria-label="Navegação principal">
+    <a class="brand" href="#home" aria-label="RocketBox, voltar ao início"><img class="brand-logo" src="./assets/branding/rocketbox-logo.png" alt="" aria-hidden="true" fetchpriority="high"><span class="compact-mark" aria-hidden="true"><img src="./assets/branding/rocketbox-logo.png" alt=""></span><span class="sr-only">RocketBox by OCSIS</span></a>
+    <a class="back-home btn-ghost" href="#home"><svg data-icon="home" aria-hidden="true"></svg> Início</a>
+    <a class="home-settings btn-ghost" href="#settings"><svg data-icon="settings" aria-hidden="true"></svg> Configurações</a>
+    <div class="nav-links">
+      <span class="eyebrow nav-caption">MÓDULOS OPERACIONAIS</span>
+      <button type="button" class="nav-button active" data-view="workspace" aria-controls="view-workspace" aria-current="page"><svg data-icon="library" aria-hidden="true"></svg> Convés <small>(Workspace)</small></button>
+      <button type="button" class="nav-button" data-view="register" aria-controls="view-register"><svg data-icon="rocket" aria-hidden="true"></svg> Registrar Asset</button>
+      <button type="button" class="nav-button nav-trash" data-view="trash" aria-controls="view-trash"><svg data-icon="trash" aria-hidden="true"></svg> Lixeira <span id="trash-total" class="nav-count">0</span></button>
+      <button type="button" class="nav-button nav-nautia" data-view="nautia" aria-controls="view-nautia"><svg data-icon="nautia" aria-hidden="true"></svg> Nautia</button>
+      <button type="button" class="nav-button" data-view="settings" aria-controls="view-settings"><svg data-icon="settings" aria-hidden="true"></svg> Configurações</button>
+    </div>
+    <div class="nav-settings">
+      <label class="eyebrow" for="layout-toggle"><svg data-icon="settings" aria-hidden="true"></svg>CONFIGURAÇÃO DO HUD</label>
+      <select id="layout-toggle" aria-label="Posição do menu"><option value="layout-left">Menu lateral</option><option value="layout-top">Menu superior</option></select>
+      <label class="motion-option"><input type="checkbox" id="motion-toggle"> <svg data-icon="personalize" aria-hidden="true"></svg> Efeitos de movimento</label>
+    </div>
+    <div class="nav-signature"><span class="status-dot"></span> SISTEMA LOCAL <span id="nav-version"></span></div>
+  </nav>
+  <main class="main-stage">
+    <section id="view-home" class="view home-view" hidden aria-labelledby="home-title">
+      <h1 id="home-title" class="sr-only" tabindex="-1">RocketBox — Seu universo criativo</h1>
+      <div class="home-content">
+        <img class="home-logo" src="./assets/branding/rocketbox-logo.png" alt="RocketBox by OCSIS" fetchpriority="high">
+        <div class="home-actions">
+          <button type="button" class="launch-card card-register" data-view="register" aria-controls="view-register"><svg data-icon="rocket" class="launch-icon" aria-hidden="true"></svg><strong>Registrar Asset</strong><span>Cadastre um recurso<br>na sua biblioteca.</span><span class="card-arrow" aria-hidden="true"><svg data-icon="arrow-right" aria-hidden="true"></svg></span></button>
+          <button type="button" class="launch-card card-workspace" data-view="workspace" aria-controls="view-workspace"><svg data-icon="library" class="launch-icon" aria-hidden="true"></svg><strong>Workspace / Biblioteca</strong><span>Organize seus assets,<br>pastas e etiquetas.</span><span class="card-arrow" aria-hidden="true"><svg data-icon="arrow-right" aria-hidden="true"></svg></span></button>
+        </div>
+      </div>
+    </section>
+    <section id="view-workspace" class="view active" aria-labelledby="workspace-title">
+      <div id="conves-react-root"></div>
+    </section>
+    <section id="view-register" class="view" hidden aria-labelledby="register-title">
+      <header class="stage-header"><div><p class="eyebrow">OCSIS / INGESTÃO DE ASSETS</p><h1 id="register-title" tabindex="-1">Registrar Asset<span class="accent">.</span></h1><p class="muted">Registre assets, pacotes e projetos no Convés.</p></div><span class="section-code" aria-hidden="true">MOD / 02</span></header>
+      <div class="split-layout">
+        <section class="viewport-panel" aria-labelledby="viewer-title">
+          <header class="panel-header asset-inspector-header"><span class="asset-inspector-header__icon" aria-hidden="true"><svg data-icon="cube" aria-hidden="true"></svg></span><div class="asset-inspector-header__copy"><h2 id="viewer-title">Asset Inspector</h2><p>Visualize, explore e analise seus assets.</p></div></header>
+          <div id="register-preview-slot"></div><div id="asset-canvas" class="viewport-canvas"><span class="axis axis-y" aria-hidden="true">Y</span><span class="axis axis-x" aria-hidden="true">X</span><div class="viewer-placeholder"><div class="wire-cube" aria-hidden="true"><svg data-icon="cube" aria-hidden="true"></svg></div><h3>O próximo mundo começa aqui.</h3><p>Área reservada para visualizar modelos 3D<br>e inspecionar texturas 2D.</p><span class="eyebrow">3D / 2D · VISUALIZAÇÃO EM BREVE</span></div></div>
+          <footer class="viewer-footer"><span>ÓRBITA / TEXTURAS</span><span>AGUARDANDO VISUALIZADOR</span></footer>
+        </section>
+        <div id="register-react-root" class="form-panel"></div>
+      </div>
+    </section>
+    <section id="view-nautia" class="view nautia-view" hidden aria-labelledby="nautia-title">
+      <div id="nautia-react-root"></div>
+    </section>
+      <section id="view-trash" class="view" hidden aria-labelledby="trash-title">
+        <header class="stage-header"><div><p class="eyebrow">OCSIS / RECUPERAÇÃO</p><h1 id="trash-title" tabindex="-1">Lixeira<span class="accent">.</span></h1><p class="muted">Seu espaço de recuperação. Restaure quando precisar.</p></div></header><div class="trash-summary studio-surface"><strong id="trash-record-count"></strong><span>Os arquivos originais permanecem no disco.</span><details><summary>Retenção</summary>Os registros permanecem até a exclusão permanente.</details><button type="button" id="empty-trash" class="btn-ghost btn-danger"><svg data-icon="trash" aria-hidden="true"></svg> Esvaziar lixeira</button></div>
+        <div class="studio-trash-tools studio-surface">
+          <input id="trash-query" type="search" aria-label="Pesquisar na lixeira" placeholder="Pesquisar na lixeira…">
+          <select id="trash-type" aria-label="Tipo"><option value="">Todos os tipos</option><option value="folder">Pastas</option><option value="asset">Assets</option></select>
+          <select id="trash-origin" aria-label="Origem"></select>
+          <select id="trash-order" aria-label="Data de exclusão"><option value="desc">Mais recentes</option><option value="asc">Mais antigos</option></select>
+          <select id="trash-layout" aria-label="Visualização"><option value="list">Lista</option><option value="grid">Grade</option></select>
+
+        </div>
+        <div class="collection-toolbar"><label class="trash-select"><input type="checkbox" id="trash-select-all"> Selecionar todos</label><span id="trash-selection-count" role="status">0 selecionado(s)</span><button type="button" id="restore-selected" class="btn-ghost" disabled>Restaurar selecionados</button><button type="button" id="purge-selected" class="btn-ghost btn-danger" disabled>Eliminar selecionados</button></div>
+        <div class="studio-trash-body"><div id="trash-items" class="trash-grid studio-surface" aria-label="Itens removidos do Convés"></div><aside class="studio-inspector" id="trash-inspector" aria-label="Detalhes da seleção"></aside></div>
+      </section>
+    <section id="view-settings" class="view settings-view" hidden aria-labelledby="settings-title">
+      <header class="stage-header"><div><p class="eyebrow">OCSIS / CENTRAL DE CONTROLE</p><h1 id="settings-title" tabindex="-1">Configurações<span class="accent">.</span></h1><p class="muted">Seu RocketBox. Do seu jeito.</p></div><span class="settings-version"><span class="status-dot"></span> PREFERÊNCIAS LOCAIS</span></header>
+      <div id="settings-root"></div>
+    </section>
+  </main>
+  <div id="notification" class="notification" role="status" aria-live="polite"></div>
+  <dialog id="folder-dialog"><form id="folder-form"><p class="eyebrow">CONVÉS / ORGANIZAÇÃO</p><h2 id="folder-dialog-title">Criar pasta</h2><label for="folder-name">Nome da pasta<input id="folder-name" maxlength="80" required autocomplete="off"></label><div class="dialog-actions"><button type="button" class="btn-ghost" id="cancel-folder">Cancelar</button><button type="submit" class="btn-primary">Salvar pasta</button></div></form></dialog>
+  <dialog id="collection-confirm" aria-labelledby="collection-confirm-title" aria-describedby="collection-confirm-message"><form id="collection-confirm-form"><h2 id="collection-confirm-title"></h2><p id="collection-confirm-message"></p><label id="purge-token-field" hidden>Confirmação: digite EXCLUIR<input id="purge-token" autocomplete="off"></label><div class="dialog-actions"><button type="button" id="collection-confirm-cancel" class="btn-ghost">Cancelar</button><button type="submit" id="collection-confirm-submit" class="btn-primary">Mover para a lixeira</button></div></form></dialog>
+  <dialog id="asset-details" aria-labelledby="asset-details-title"><h2 id="asset-details-title"></h2><dl id="asset-details-data"></dl><button type="button" id="asset-details-close" class="btn-ghost">Fechar</button></dialog>
+  <dialog id="item-context" aria-labelledby="item-context-title"><h2 id="item-context-title">Ações do item</h2><div id="item-context-actions"></div></dialog>
+</div>
+<div class="drag-shade" aria-hidden="true"></div>
+<div id="floating-trash" class="floating-trash" hidden role="region" aria-label="Solte aqui para mover para a lixeira">
+  <svg class="bin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="trash-lid"><path d="M3 6h18M9 6V3h6v3"/></g><path d="M5 9l1 12h12l1-12M10 11v6m4-6v6"/></svg>
+  <strong>Lixeira</strong><span id="trash-drop-message" role="status">Solte aqui para remover do Convés</span>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

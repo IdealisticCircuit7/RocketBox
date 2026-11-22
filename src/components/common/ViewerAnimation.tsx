@@ -1,0 +1,8 @@
+import { useEffect, useState } from 'react';
+import type { createViewerAnimation } from '../../services/viewerAnimation';
+export function ViewerAnimation({animation}:{animation:ReturnType<typeof createViewerAnimation>}) {
+ const [clip,setClip]=useState(0),[time,setTime]=useState(0),[playing,setPlaying]=useState(false);
+ useEffect(()=>{const id=setInterval(()=>{setTime(animation.position());setPlaying(animation.isPlaying());},150);return()=>clearInterval(id);},[animation]);
+ if(!animation.clips.length)return null;
+ return <details open><summary>Animações reais · {animation.clips.length} clipes</summary><div className="rb-viewer-toolbar"><select aria-label="Animação" value={clip} onChange={e=>{const i=Number(e.target.value);setClip(i);animation.select(i);}}>{animation.clips.map((c,i)=><option key={c.uuid} value={i}>{c.name||`Clipe ${i+1}`} · {c.duration.toFixed(2)} s</option>)}</select><button type="button" onClick={()=>{if(playing)animation.pause();else animation.play();setPlaying(!playing);}}>{playing?'Pausar':'Reproduzir'}</button><button type="button" onClick={()=>{animation.seek(0);setTime(0);}}>Reiniciar</button><label>Velocidade<select defaultValue="1" onChange={e=>animation.speed(Number(e.target.value))}>{[.25,.5,1,1.5,2,4].map(v=><option key={v}>{v}</option>)}</select></label><label><input type="checkbox" defaultChecked onChange={e=>animation.loop(e.target.checked)}/>Loop</label><input aria-label="Posição da animação" type="range" min="0" max={animation.clips[clip].duration} step="0.01" value={time} onChange={e=>{const n=Number(e.target.value);animation.seek(n);setTime(n);}}/><span>{time.toFixed(2)} s</span></div></details>;
+}

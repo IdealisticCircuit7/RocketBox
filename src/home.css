@@ -1,0 +1,64 @@
+/* Landing screen only. Internal navigation, artwork and preference contracts stay intact. */
+#app-container.is-home { grid-template-rows:48px minmax(0,1fr); }
+#app-container.is-home .nav-panel {
+  padding:5px clamp(18px,2.4vw,36px); min-height:48px; overflow:visible;
+  background:linear-gradient(180deg,#030910ed,#050d16c4);
+  border:0; border-bottom:1px solid #b7d8f210; box-shadow:none;
+}
+#app-container.is-home .nav-panel .brand { display:none; }
+#app-container.is-home .home-settings {
+  margin-left:auto; min-height:32px; padding:6px 10px; gap:7px;
+  border-color:transparent; background:transparent; color:#adbdcf;
+  font-size:12px; font-weight:500; text-decoration:none;
+}
+#app-container.is-home .home-settings:hover { color:#e6f8ff; background:#bddfff09; border-color:#aac9e322; }
+#app-container.is-home .home-settings::after { display:none; }
+#app-container.is-home .home-content { width:min(55vw,780px); margin:0 0 4vh 7vw; padding:24px 0; }
+#app-container.is-home .home-logo { width:91%; max-height:32vh; margin:0 auto clamp(26px,4vh,40px); }
+#app-container.is-home .home-actions { gap:clamp(16px,1.7vw,26px); }
+#app-container.is-home .launch-card {
+  min-height:228px; padding:26px; border-radius:15px;
+  border:1px solid color-mix(in srgb,var(--card-color) 19%,#92accb28);
+  background:linear-gradient(145deg,rgb(18 33 50 / max(.82,var(--panel-alpha))),rgb(6 14 27 / max(.92,var(--panel-alpha))));
+  box-shadow:0 12px 32px #0005,inset 0 1px 0 #e0f2ff0b;
+  backdrop-filter:blur(16px) saturate(110%);
+}
+#app-container.is-home .launch-card::before { opacity:.4; }
+#app-container.is-home .launch-card::after { left:26px; right:26px; bottom:0; height:2px; opacity:.12; transform:scaleX(.7); }
+#app-container.is-home .launch-card:not(:disabled):is(:hover,:focus-visible) {
+  border-color:color-mix(in srgb,var(--card-color) 45%,#bed6e944);
+  box-shadow:0 16px 36px #0006,inset 0 1px 0 #e2f5ff17;
+}
+#app-container.is-home .launch-card:not(:disabled):is(:hover,:focus-visible)::after { opacity:var(--glow-opacity); transform:scaleX(1); }
+#app-container.is-home .launch-card > :is(.ocsis-icon,.launch-icon) {
+  width:44px; height:44px; margin:0 0 20px; flex:none;
+  filter:drop-shadow(0 0 6px color-mix(in srgb,var(--card-color) 18%,transparent));
+}
+#app-container.is-home .launch-card strong { font-size:clamp(18px,1.55vw,23px); line-height:1.25; letter-spacing:-.025em; font-weight:600; margin:0 0 10px; }
+#app-container.is-home .launch-card > span:not(.card-arrow):not(.ocsis-icon) { color:#b8c8d9; font-size:13px; line-height:1.6; padding-right:15px; }
+#app-container.is-home .launch-card .card-arrow { right:22px; bottom:24px; opacity:.6; }
+#app-container.is-home .launch-card .card-arrow > .ocsis-icon { width:20px; height:20px; }
+.no-lighting #app-container.is-home .launch-card > .ocsis-icon { filter:none; }
+.performance-mode #app-container.is-home .launch-card { backdrop-filter:none; }
+@media (max-width:1000px) {
+  #app-container.is-home .home-content { width:65vw; margin-left:5vw; }
+  #app-container.is-home .launch-card { padding:22px; min-height:208px; }
+  #app-container.is-home .launch-card strong { font-size:18px; }
+}
+@media (max-width:700px) {
+  #app-container.is-home .home-content { width:88%; margin:auto; padding:20px 0; }
+  #app-container.is-home .home-logo { width:85%; max-height:26vh; margin-bottom:24px; }
+  #app-container.is-home .home-actions { grid-template-columns:1fr; gap:14px; }
+  #app-container.is-home .launch-card { min-height:136px; padding:22px 45px 22px 88px; justify-content:center; }
+  #app-container.is-home .launch-card > :is(.ocsis-icon,.launch-icon) { position:absolute; width:40px; height:40px; left:24px; top:26px; margin:0; }
+  #app-container.is-home .launch-card > span:not(.card-arrow):not(.ocsis-icon) { font-size:12px; }
+}
+@media (max-height:620px) and (min-width:701px) {
+  #app-container.is-home .home-content { margin-bottom:0; padding:14px 0; }
+  #app-container.is-home .home-logo { max-height:28vh; margin-bottom:20px; }
+  #app-container.is-home .launch-card { min-height:178px; padding:20px; }
+  #app-container.is-home .launch-card > :is(.ocsis-icon,.launch-icon) { width:36px; height:36px; margin-bottom:14px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #app-container.is-home .launch-card,#app-container.is-home .launch-card .card-arrow { transition:none; transform:none; }
+}

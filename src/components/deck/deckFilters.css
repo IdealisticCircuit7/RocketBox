@@ -1,0 +1,3333 @@
+/* ==========================================================================
+   OCSIS RocketBox — Design System do Convés Inteligente, Filtros e Nautia
+   Refinamento de Interface, UX, Contraste WCAG AA e Legibilidade (Etapas 01–12)
+   ========================================================================== */
+
+.nautia-deck-shell,
+.nautia-register-form,
+.nautia-module-shell {
+  --nautia-black: #05080f;
+  --nautia-graphite: #0a121e;
+  --nautia-graphite-elevated: #0f1b2d;
+  --nautia-graphite-hover: #15253c;
+  --nautia-surface: rgba(11, 20, 34, 0.93);
+  --nautia-surface-strong: rgba(8, 14, 24, 0.97);
+  --nautia-border: rgba(138, 180, 216, 0.18);
+  --nautia-border-strong: rgba(138, 180, 216, 0.34);
+  --nautia-cyan: #00d4ff;
+  --nautia-purple: #9d4edd;
+  --nautia-text: #eef5ff;
+  --nautia-muted: #9eb2c8;
+  --nautia-radius: 12px;
+  --nautia-ease: cubic-bezier(0.2, 0.7, 0.25, 1);
+
+  color: var(--nautia-text);
+}
+
+.nautia-deck-shell {
+  display: grid;
+  gap: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   1. Cabeçalho Compacto do Convés (Etapa 02)
+   -------------------------------------------------------------------------- */
+.nautia-deck-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+  padding-bottom: 6px;
+}
+
+.nautia-deck-topbar__title-block {
+  min-width: 0;
+}
+
+.nautia-deck-topbar__title-block .eyebrow {
+  margin-bottom: 2px;
+}
+
+.nautia-deck-topbar__headline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.nautia-deck-topbar__headline h1 {
+  margin: 0;
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.1;
+}
+
+.nautia-deck-topbar__headline .muted {
+  font-size: 12.5px;
+  color: var(--nautia-muted);
+}
+
+.nautia-deck-topbar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Barra de Ferramentas Principal + Filtros Rápidos (Etapas 02 e 03)
+   -------------------------------------------------------------------------- */
+.nautia-deck-toolbar {
+  display: grid;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--nautia-radius);
+  border: 1px solid var(--nautia-border);
+  background: linear-gradient(155deg, rgba(15, 27, 45, 0.94), rgba(6, 11, 20, 0.96));
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+}
+
+.nautia-deck-toolbar__primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nautia-toolbar-search {
+  position: relative;
+  flex: 1 1 240px;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+}
+
+.nautia-toolbar-search__icon {
+  position: absolute;
+  left: 11px;
+  width: 15px;
+  height: 15px;
+  color: var(--nautia-muted);
+  pointer-events: none;
+}
+
+.nautia-toolbar-search input {
+  width: 100%;
+  min-height: 36px;
+  padding: 7px 12px 7px 34px;
+  border-radius: 8px;
+  border: 1px solid var(--nautia-border);
+  background: #060d18;
+  color: var(--nautia-text);
+  font-size: 12.5px;
+}
+
+.nautia-toolbar-search input:focus {
+  border-color: var(--nautia-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.16);
+}
+
+.nautia-quick-type-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.nautia-type-chip {
+  padding: 5px 10px;
+  min-height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--nautia-border);
+  background: #07101d;
+  color: var(--nautia-muted);
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 160ms var(--nautia-ease), color 160ms var(--nautia-ease),
+    background-color 160ms var(--nautia-ease), box-shadow 180ms var(--nautia-ease);
+}
+
+.nautia-type-chip:hover {
+  color: var(--nautia-text);
+  border-color: var(--nautia-border-strong);
+}
+
+.nautia-type-chip.is-active {
+  color: #e6fbff;
+  border-color: rgba(0, 212, 255, 0.55);
+  background: rgba(0, 212, 255, 0.15);
+  box-shadow: inset 0 -2px 0 var(--nautia-cyan), 0 0 12px rgba(0, 212, 255, 0.16);
+}
+
+.nautia-deck-toolbar__right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.nautia-filter-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--nautia-cyan);
+  color: #03131d;
+  font: 700 10px/1 Consolas, monospace;
+}
+
+/* --------------------------------------------------------------------------
+   Faixa Compacta de Etiquetas de Pastas (FolderTagFilterBar)
+   -------------------------------------------------------------------------- */
+.nautia-deck-tagbar {
+  border-top: 1px solid rgba(138, 180, 216, 0.12);
+  padding-top: 9px;
+}
+
+.nautia-deck-tagbar__strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nautia-deck-tagbar__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: 600 10px/1 Consolas, monospace;
+  letter-spacing: 0.12em;
+  color: var(--nautia-cyan);
+  margin-right: 4px;
+}
+
+.nautia-tag-icons-rail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 auto;
+}
+
+.nautia-tag-icon-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px 4px 6px;
+  min-height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--nautia-border);
+  background: #060d18;
+  color: var(--nautia-muted);
+  font-size: 11.5px;
+  cursor: pointer;
+  transition: border-color 160ms var(--nautia-ease), color 160ms var(--nautia-ease),
+    background-color 160ms var(--nautia-ease), box-shadow 180ms var(--nautia-ease);
+}
+
+.nautia-tag-icon-pill:hover {
+  color: var(--nautia-text);
+  border-color: var(--nautia-border-strong);
+}
+
+.nautia-tag-icon-pill__glyph {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--nautia-graphite-elevated);
+  border: 1px solid var(--nautia-border);
+}
+
+.nautia-tag-icon-pill__count {
+  font: 600 10px/1 Consolas, monospace;
+  padding: 2px 5px;
+  border-radius: 999px;
+  background: var(--nautia-graphite-elevated);
+  color: var(--nautia-muted);
+}
+
+.nautia-tag-icon-pill.accent-cyan.is-selected {
+  color: #e8fbff;
+  border-color: var(--nautia-cyan);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(10, 18, 30, 0.95));
+  box-shadow: inset 0 -1px 0 var(--nautia-cyan), 0 0 14px rgba(0, 212, 255, 0.24);
+}
+
+.nautia-tag-icon-pill.accent-cyan.is-selected .nautia-tag-icon-pill__glyph {
+  color: var(--nautia-cyan);
+  border-color: rgba(0, 212, 255, 0.55);
+}
+
+.nautia-tag-icon-pill.accent-purple.is-selected {
+  color: #f3e8ff;
+  border-color: var(--nautia-purple);
+  background: linear-gradient(135deg, rgba(157, 78, 221, 0.24), rgba(10, 18, 30, 0.95));
+  box-shadow: inset 0 -1px 0 var(--nautia-purple), 0 0 14px rgba(157, 78, 221, 0.28);
+}
+
+.nautia-tag-icon-pill.accent-purple.is-selected .nautia-tag-icon-pill__glyph {
+  color: #c792ff;
+  border-color: rgba(157, 78, 221, 0.6);
+}
+
+.nautia-deck-tagbar__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.nautia-search-field--compact input {
+  min-height: 28px;
+  max-width: 155px;
+  padding: 4px 9px;
+  font-size: 11.5px;
+  border-radius: 6px;
+  background: #060d18;
+  border: 1px solid var(--nautia-border);
+  color: var(--nautia-text);
+}
+
+/* Chips removíveis de filtros ativos (Etapa 03) */
+.nautia-active-filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(138, 180, 216, 0.16);
+}
+
+.nautia-active-filters-bar__count {
+  font: 600 10.5px/1 Consolas, monospace;
+  color: var(--nautia-cyan);
+}
+
+.nautia-active-filters-bar__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 auto;
+}
+
+.nautia-removable-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  min-height: 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 212, 255, 0.38);
+  background: rgba(0, 212, 255, 0.11);
+  color: #dff8ff;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 150ms var(--nautia-ease), border-color 150ms var(--nautia-ease);
+}
+
+.nautia-removable-chip:hover {
+  background: rgba(248, 113, 113, 0.18);
+  border-color: rgba(248, 113, 113, 0.55);
+  color: #fecaca;
+}
+
+/* --------------------------------------------------------------------------
+   3. Nautia Quick Actions — Barra Contextual Compacta (Etapa 04)
+   -------------------------------------------------------------------------- */
+.nautia-quick-bar {
+  border-radius: 10px;
+  border: 1px solid var(--nautia-border);
+  background: linear-gradient(145deg, rgba(14, 22, 36, 0.92), rgba(6, 11, 20, 0.95));
+  padding: 8px 12px;
+  transition: border-color 180ms var(--nautia-ease), box-shadow 200ms var(--nautia-ease);
+}
+
+.nautia-quick-bar.has-selection {
+  border-color: rgba(157, 78, 221, 0.5);
+  box-shadow: 0 0 18px rgba(157, 78, 221, 0.15);
+}
+
+.nautia-quick-bar__main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nautia-quick-bar__identity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.nautia-quick-menu__pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--nautia-muted);
+  flex-shrink: 0;
+}
+
+.nautia-quick-bar.has-selection .nautia-quick-menu__pulse {
+  background: var(--nautia-cyan);
+  box-shadow: 0 0 10px var(--nautia-cyan);
+}
+
+.nautia-quick-bar__badge {
+  font: 700 10px/1 Consolas, monospace;
+  letter-spacing: 0.14em;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: rgba(157, 78, 221, 0.18);
+  border: 1px solid rgba(157, 78, 221, 0.42);
+  color: #e6d2ff;
+}
+
+.nautia-quick-bar__empty-msg {
+  font-size: 12px;
+  color: var(--nautia-muted);
+}
+
+.nautia-quick-bar__scope-pill {
+  font: 600 11px/1 Consolas, monospace;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0, 212, 255, 0.14);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  color: #d8f8ff;
+}
+
+.nautia-quick-bar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.nautia-quick-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  min-height: 30px;
+  border-radius: 7px;
+  border: 1px solid var(--nautia-border);
+  background: #07111e;
+  color: var(--nautia-text);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 160ms var(--nautia-ease), background-color 160ms var(--nautia-ease),
+    box-shadow 180ms var(--nautia-ease), transform 140ms var(--nautia-ease);
+}
+
+.nautia-quick-pill:hover {
+  transform: translateY(-1px);
+  background: var(--nautia-graphite-hover);
+}
+
+.nautia-quick-pill.accent-cyan:hover,
+.nautia-quick-pill.accent-cyan.is-selected {
+  border-color: var(--nautia-cyan);
+  box-shadow: inset 0 -2px 0 var(--nautia-cyan), 0 0 12px rgba(0, 212, 255, 0.22);
+  color: #e6fbff;
+}
+
+.nautia-quick-pill.accent-purple:hover,
+.nautia-quick-pill.accent-purple.is-selected {
+  border-color: var(--nautia-purple);
+  box-shadow: inset 0 -2px 0 var(--nautia-purple), 0 0 12px rgba(157, 78, 221, 0.26);
+  color: #f2e4ff;
+}
+
+.nautia-quick-bar__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.nautia-btn-nautia-link {
+  border-color: rgba(157, 78, 221, 0.42) !important;
+  color: #e4cfff !important;
+}
+
+.nautia-quick-bar__expanded {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--nautia-border);
+  display: grid;
+  gap: 10px;
+}
+
+.nautia-quick-bar__expanded-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nautia-quick-menu__guidance {
+  margin: 0;
+  font-size: 12px;
+}
+
+.nautia-quick-menu__guidance.is-muted {
+  color: var(--nautia-muted);
+}
+
+.nautia-quick-menu__guidance.is-ready {
+  color: #bceeff;
+}
+
+.nautia-quick-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+  gap: 8px;
+}
+
+.nautia-quick-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  row-gap: 4px;
+  align-items: start;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--nautia-border);
+  background: #060d18;
+  color: var(--nautia-text);
+  cursor: pointer;
+  transition: border-color 160ms var(--nautia-ease), background-color 160ms var(--nautia-ease),
+    box-shadow 180ms var(--nautia-ease);
+}
+
+.nautia-quick-card:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+.nautia-quick-card:not(:disabled):hover {
+  border-color: var(--nautia-border-strong);
+  background: var(--nautia-graphite);
+}
+
+.nautia-quick-card.accent-cyan:not(:disabled):hover,
+.nautia-quick-card.accent-cyan.is-selected {
+  border-color: var(--nautia-cyan);
+  box-shadow: 0 0 14px rgba(0, 212, 255, 0.2);
+}
+
+.nautia-quick-card.accent-purple:not(:disabled):hover,
+.nautia-quick-card.accent-purple.is-selected {
+  border-color: var(--nautia-purple);
+  box-shadow: 0 0 14px rgba(157, 78, 221, 0.24);
+}
+
+.nautia-quick-card__icon {
+  grid-row: 1 / span 2;
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  border: 1px solid var(--nautia-border);
+  background: var(--nautia-graphite-elevated);
+  color: var(--nautia-cyan);
+}
+
+.nautia-quick-card.accent-purple .nautia-quick-card__icon {
+  color: #c792ff;
+}
+
+.nautia-quick-card__content {
+  display: grid;
+  gap: 2px;
+}
+
+.nautia-quick-card__content strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.nautia-quick-card__content small {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--nautia-muted);
+}
+
+.nautia-quick-card__scope {
+  grid-column: 2;
+  font: 600 9.5px/1 Consolas, monospace;
+  color: var(--nautia-muted);
+}
+
+/* --------------------------------------------------------------------------
+   4. Painel Expansível de Filtros Avançados (UniversalFiltersPanel)
+   -------------------------------------------------------------------------- */
+.nautia-universal-filters {
+  background: linear-gradient(155deg, rgba(15, 27, 45, 0.96), rgba(6, 11, 20, 0.98));
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: var(--nautia-radius);
+  padding: 14px 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.38);
+}
+
+.nautia-universal-filters__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.nautia-universal-filters__mode {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.nautia-universal-filters__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.nautia-date-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Breadcrumbs + Conteúdo Principal: Pastas e Assets (Etapas 02 e 05)
+   -------------------------------------------------------------------------- */
+.nautia-deck-workspace-body {
+  display: grid;
+  gap: 12px;
+}
+
+.nautia-breadcrumbs-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--nautia-border);
+  background: rgba(8, 15, 26, 0.88);
+}
+
+.nautia-breadcrumbs-trail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.nautia-breadcrumb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--nautia-muted);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.nautia-breadcrumb-btn:hover {
+  color: var(--nautia-text);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.nautia-breadcrumb-btn.is-current {
+  color: var(--nautia-cyan);
+  font-weight: 600;
+  border-color: rgba(0, 212, 255, 0.28);
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.nautia-breadcrumb-sep {
+  color: var(--nautia-muted);
+  font-size: 11px;
+}
+
+.nautia-breadcrumb-badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(157, 78, 221, 0.18);
+  border: 1px solid rgba(157, 78, 221, 0.42);
+  color: #e8d5ff;
+}
+
+.nautia-breadcrumbs-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--nautia-muted);
+}
+
+.nautia-breadcrumbs-summary strong {
+  color: var(--nautia-text);
+}
+
+.nautia-summary-selected {
+  color: var(--nautia-cyan);
+}
+
+.nautia-deck-results,
+.nautia-deck-assets {
+  background: linear-gradient(155deg, rgba(13, 22, 36, 0.92), rgba(5, 9, 16, 0.95));
+  border: 1px solid var(--nautia-border);
+  border-radius: var(--nautia-radius);
+  padding: 14px 16px;
+}
+
+.nautia-results-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.nautia-results-header__titles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.nautia-eyebrow {
+  display: inline-block;
+  font: 600 10px/1.3 Consolas, monospace;
+  letter-spacing: 0.13em;
+  color: var(--nautia-cyan);
+}
+
+.nautia-section-title,
+.nautia-subsection-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--nautia-text);
+}
+
+.nautia-results-summary,
+.nautia-empty-hint,
+.nautia-muted-note {
+  margin: 0;
+  font-size: 12px;
+  color: var(--nautia-muted);
+}
+
+/* Grade e Lista de Pastas e Assets */
+.nautia-folder-grid,
+.nautia-asset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  gap: 10px;
+}
+
+.nautia-folder-grid.is-list-view,
+.nautia-asset-grid.is-list-view {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 7px;
+}
+
+.nautia-folder-card,
+.nautia-asset-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid var(--nautia-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: rgba(10, 18, 30, 0.92);
+  transition: border-color 160ms var(--nautia-ease), box-shadow 180ms var(--nautia-ease),
+    background-color 160ms var(--nautia-ease);
+}
+
+.nautia-folder-grid.is-list-view .nautia-folder-card,
+.nautia-asset-grid.is-list-view .nautia-asset-card {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 9px 14px;
+}
+
+.nautia-folder-card:hover,
+.nautia-asset-card:hover {
+  border-color: rgba(0, 212, 255, 0.45);
+  background: rgba(14, 25, 42, 0.96);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+}
+
+.nautia-folder-card.is-focused {
+  border-color: var(--nautia-purple);
+  box-shadow: inset 0 -2px 0 var(--nautia-purple), 0 0 16px rgba(157, 78, 221, 0.2);
+}
+
+.nautia-asset-card.is-selected {
+  border-color: var(--nautia-cyan);
+  background: linear-gradient(145deg, rgba(0, 212, 255, 0.13), rgba(12, 22, 36, 0.96));
+  box-shadow: inset 0 -2px 0 var(--nautia-cyan), 0 0 16px rgba(0, 212, 255, 0.18);
+}
+
+.nautia-folder-card__top,
+.nautia-asset-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nautia-folder-card__open {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+  border: 0;
+  color: var(--nautia-text);
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  min-width: 0;
+}
+
+.nautia-folder-card__icon-box,
+.nautia-asset-card__glyph {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  color: var(--nautia-cyan);
+  flex-shrink: 0;
+}
+
+.nautia-folder-card__name,
+.nautia-asset-card__title {
+  overflow-wrap: anywhere;
+  line-height: 1.3;
+}
+
+.nautia-card-actions,
+.nautia-asset-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.nautia-btn-icon-menu {
+  padding: 3px 7px;
+  min-height: 26px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--nautia-muted);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.nautia-btn-icon-menu:hover {
+  border-color: var(--nautia-border);
+  color: var(--nautia-text);
+  background: var(--nautia-graphite-hover);
+}
+
+.nautia-folder-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.nautia-mini-tag,
+.nautia-assign-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  border: 1px solid var(--nautia-border);
+  background: #060d18;
+  color: var(--nautia-muted);
+  cursor: pointer;
+}
+
+.nautia-mini-tag.accent-cyan.is-selected,
+.nautia-assign-pill.accent-cyan.is-assigned {
+  color: #e2fbff;
+  border-color: var(--nautia-cyan);
+  background: rgba(0, 212, 255, 0.14);
+}
+
+.nautia-mini-tag.accent-purple.is-selected,
+.nautia-assign-pill.accent-purple.is-assigned {
+  color: #f3e8ff;
+  border-color: var(--nautia-purple);
+  background: rgba(157, 78, 221, 0.18);
+}
+
+.nautia-folder-tag-popover {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--nautia-border);
+  width: 100%;
+}
+
+.nautia-asset-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.nautia-asset-select input[type='checkbox'] {
+  accent-color: var(--nautia-cyan);
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.nautia-format-badge {
+  font: 600 10.5px/1 Consolas, monospace;
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: rgba(0, 212, 255, 0.12);
+  color: var(--nautia-cyan);
+  border: 1px solid rgba(0, 212, 255, 0.32);
+  flex-shrink: 0;
+}
+
+.nautia-asset-card__body {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.nautia-asset-grid.is-list-view .nautia-asset-card__body {
+  flex: 1 1 260px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 0 12px;
+}
+
+.nautia-asset-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 11.5px;
+  color: var(--nautia-muted);
+}
+
+.nautia-asset-card__folder-chip {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(157, 78, 221, 0.15);
+  color: #dfc7ff;
+  font-size: 10.5px;
+}
+
+.nautia-asset-card__path {
+  margin: 0;
+  font-size: 11px;
+  font-family: Consolas, monospace;
+  color: #7e95ae;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estados Vazios Compactos e Informativos (Etapa 05) */
+.nautia-empty-panel {
+  padding: 16px 18px;
+  border: 1px dashed var(--nautia-border-strong);
+  border-radius: 10px;
+  background: rgba(6, 12, 22, 0.65);
+  color: var(--nautia-muted);
+}
+
+.nautia-empty-panel--compact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nautia-empty-panel__content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nautia-empty-panel__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--nautia-cyan);
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.nautia-empty-panel__content strong {
+  display: block;
+  font-size: 13px;
+  color: var(--nautia-text);
+  margin-bottom: 2px;
+}
+
+.nautia-empty-panel__content p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--nautia-muted);
+}
+
+/* --------------------------------------------------------------------------
+   6. Seletor Acessível Customizado + Select Nativo no Windows (Etapa 06)
+   -------------------------------------------------------------------------- */
+.nautia-field {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  color: #c9d7e8;
+  min-width: 0;
+}
+
+.nautia-field__label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #d2e0f0;
+}
+
+.nautia-search-field input,
+.nautia-field input,
+.nautia-field select {
+  color-scheme: dark;
+  background-color: #0b1422;
+  color: #eef5ff;
+  border: 1px solid rgba(138, 180, 216, 0.26);
+  border-radius: 8px;
+  padding: 9px 12px;
+  min-height: 40px;
+  font-size: 13px;
+  transition: border-color 160ms var(--nautia-ease), box-shadow 160ms var(--nautia-ease),
+    background-color 160ms var(--nautia-ease);
+}
+
+.nautia-field select option,
+.nautia-field select optgroup {
+  background-color: #0b1422;
+  color: #eef5ff;
+}
+
+.nautia-field input::placeholder {
+  color: #849bb3;
+}
+
+.nautia-search-field input:focus-visible,
+.nautia-field input:focus-visible,
+.nautia-field select:focus-visible {
+  outline: none;
+  border-color: var(--nautia-cyan);
+  background-color: #0e192b;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+}
+
+/* AccessibleSelect (Combobox / Listbox Dark Theme WCAG AA) */
+.nautia-select-field {
+  position: relative;
+}
+
+.nautia-select-field.is-open {
+  z-index: 45;
+}
+
+.nautia-native-select-sync {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  pointer-events: none !important;
+}
+
+.nautia-custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.nautia-custom-select__trigger {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(138, 180, 216, 0.28);
+  background: linear-gradient(180deg, #0d1829, #09111e);
+  color: #f0f6ff;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms var(--nautia-ease), box-shadow 160ms var(--nautia-ease),
+    background-color 160ms var(--nautia-ease);
+}
+
+.nautia-custom-select__trigger:hover:not(:disabled) {
+  border-color: rgba(0, 212, 255, 0.52);
+  background: linear-gradient(180deg, #112036, #0b1524);
+}
+
+.nautia-custom-select__trigger:focus-visible,
+.nautia-custom-select__trigger.is-open {
+  outline: none;
+  border-color: var(--nautia-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.22);
+}
+
+.nautia-custom-select__value {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #f0f6ff;
+}
+
+.nautia-custom-select__badge {
+  font: 600 10px/1 Consolas, monospace;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: rgba(0, 212, 255, 0.14);
+  border: 1px solid rgba(0, 212, 255, 0.32);
+  color: #9beeff;
+  flex-shrink: 0;
+}
+
+.nautia-custom-select__chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--nautia-cyan);
+  flex-shrink: 0;
+  transition: transform 160ms var(--nautia-ease);
+}
+
+.nautia-custom-select__trigger.is-open .nautia-custom-select__chevron {
+  transform: rotate(180deg);
+}
+
+.nautia-custom-select__menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  z-index: 70;
+  max-height: 250px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.48);
+  background: #0a1423;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.78), 0 0 20px rgba(0, 212, 255, 0.16);
+}
+
+.nautia-custom-select__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px 11px;
+  border-radius: 7px;
+  color: #e6f0fc;
+  font-size: 13px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(138, 180, 216, 0.07);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.nautia-custom-select__option:last-child {
+  border-bottom: 0;
+}
+
+.nautia-custom-select__option.is-highlighted,
+.nautia-custom-select__option:hover {
+  background: #132842;
+  color: #ffffff;
+}
+
+.nautia-custom-select__option.is-selected {
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.22), rgba(19, 40, 66, 0.92));
+  color: #7ceeff;
+  font-weight: 600;
+  border-left: 2px solid var(--nautia-cyan);
+}
+
+.nautia-custom-select__option.is-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.nautia-custom-select__option-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nautia-custom-select__option-badge {
+  font: 600 9.5px/1 Consolas, monospace;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(148, 163, 184, 0.14);
+  color: #b8cae0;
+}
+
+.nautia-custom-select__check {
+  color: var(--nautia-cyan);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   7. Formulário Registrar Asset Refinado (Etapa 07)
+   -------------------------------------------------------------------------- */
+.nautia-register-form {
+  background: linear-gradient(155deg, rgba(14, 24, 39, 0.96), rgba(6, 11, 20, 0.98));
+  border: 1px solid rgba(0, 212, 255, 0.28);
+  border-radius: var(--nautia-radius);
+  padding: 20px 22px;
+  display: grid;
+  gap: 16px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.42);
+}
+
+.nautia-register-form__header,
+.nautia-register-form__actions,
+.nautia-modal-header,
+.nautia-modal-footer,
+.nautia-step-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nautia-register-form__summary-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nautia-badge-pill {
+  font: 600 10.5px/1 Consolas, monospace;
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(157, 78, 221, 0.45);
+  background: rgba(157, 78, 221, 0.16);
+  color: #e5d1ff;
+}
+
+.nautia-badge-pill.is-cyan {
+  border-color: rgba(0, 212, 255, 0.45);
+  background: rgba(0, 212, 255, 0.14);
+  color: #b8f5ff;
+}
+
+.nautia-form-group {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(138, 180, 216, 0.16);
+  background: rgba(6, 12, 22, 0.68);
+  display: grid;
+  gap: 12px;
+}
+
+.nautia-form-group__legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 6px;
+  font: 600 10.5px/1 Consolas, monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nautia-cyan);
+}
+
+.nautia-register-form__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.nautia-register-form__grid--three {
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+}
+
+.nautia-field--full {
+  grid-column: 1 / -1;
+}
+
+.nautia-register-form__footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(138, 180, 216, 0.14);
+}
+
+.nautia-btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  background: linear-gradient(125deg, #00d4ff, #0098cc) !important;
+  color: #02111c !important;
+  border-color: #7beeff !important;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.28);
+}
+
+.nautia-btn-cta:hover {
+  background: linear-gradient(125deg, #5ce4ff, #00b8f0) !important;
+  box-shadow: 0 0 26px rgba(0, 212, 255, 0.42);
+}
+
+/* --------------------------------------------------------------------------
+   8. Botões, Controles Segmentados, Criador de Etiquetas e Modais (Etapa 08)
+   -------------------------------------------------------------------------- */
+.nautia-segmented {
+  display: inline-flex;
+  padding: 2px;
+  background: #060d18;
+  border: 1px solid var(--nautia-border);
+  border-radius: 8px;
+  gap: 2px;
+}
+
+.nautia-segmented button {
+  background: transparent;
+  color: var(--nautia-muted);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 11.5px;
+  cursor: pointer;
+  transition: color 150ms var(--nautia-ease), background-color 150ms var(--nautia-ease),
+    border-color 150ms var(--nautia-ease);
+}
+
+.nautia-segmented button.is-active {
+  color: var(--nautia-text);
+  background: rgba(0, 212, 255, 0.15);
+  border-color: rgba(0, 212, 255, 0.48);
+  box-shadow: inset 0 -1px 0 var(--nautia-cyan);
+}
+
+.nautia-segmented button.is-active.is-purple {
+  background: rgba(157, 78, 221, 0.2);
+  border-color: rgba(157, 78, 221, 0.55);
+  box-shadow: inset 0 -1px 0 var(--nautia-purple);
+}
+
+.nautia-btn-ghost,
+.nautia-btn-accent,
+.nautia-btn-primary,
+.nautia-btn-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 12px;
+  min-height: 34px;
+  cursor: pointer;
+  border: 1px solid var(--nautia-border);
+  background: var(--nautia-graphite);
+  color: var(--nautia-text);
+  transition: border-color 160ms var(--nautia-ease), background-color 160ms var(--nautia-ease),
+    box-shadow 180ms var(--nautia-ease);
+}
+
+.nautia-btn-chip {
+  padding: 4px 10px;
+  min-height: 28px;
+  font-size: 11.5px;
+}
+
+.nautia-btn-ghost:hover,
+.nautia-btn-chip:hover {
+  border-color: var(--nautia-border-strong);
+  background: var(--nautia-graphite-hover);
+}
+
+.nautia-btn-ghost.is-active {
+  border-color: rgba(0, 212, 255, 0.52);
+  background: rgba(0, 212, 255, 0.13);
+  color: #e4fbff;
+  box-shadow: inset 0 -2px 0 var(--nautia-cyan);
+}
+
+.nautia-btn-accent {
+  border-color: rgba(157, 78, 221, 0.48);
+  background: rgba(157, 78, 221, 0.16);
+  color: #ebd9ff;
+}
+
+.nautia-btn-accent:hover {
+  border-color: var(--nautia-purple);
+  box-shadow: 0 0 14px rgba(157, 78, 221, 0.26);
+}
+
+.nautia-btn-primary {
+  border-color: rgba(0, 212, 255, 0.65);
+  background: rgba(0, 212, 255, 0.18);
+  color: #e4fbff;
+}
+
+.nautia-btn-primary:hover {
+  border-color: var(--nautia-cyan);
+  background: rgba(0, 212, 255, 0.26);
+  box-shadow: 0 0 14px rgba(0, 212, 255, 0.26);
+}
+
+.nautia-btn-danger {
+  border-color: rgba(248, 113, 113, 0.35);
+  color: #fca5a5;
+}
+
+.nautia-btn-danger:hover {
+  border-color: rgba(248, 113, 113, 0.65);
+  background: rgba(127, 29, 29, 0.32);
+}
+
+.nautia-icon-svg,
+.nautia-folder-glyph {
+  width: 15px;
+  height: 15px;
+}
+
+.nautia-folder-glyph {
+  width: 17px;
+  height: 17px;
+  color: var(--nautia-cyan);
+}
+
+.nautia-mini-svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* Criador de etiqueta de pasta */
+.nautia-tag-creator {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  background: #060d18;
+  border: 1px solid rgba(157, 78, 221, 0.38);
+  border-radius: 10px;
+}
+
+.nautia-tag-creator__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.nautia-icon-picker {
+  border: 1px solid var(--nautia-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 0;
+}
+
+.nautia-icon-picker legend {
+  font-size: 11px;
+  color: var(--nautia-muted);
+  padding: 0 6px;
+}
+
+.nautia-icon-picker__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(94px, 1fr));
+  gap: 6px;
+}
+
+.nautia-icon-choice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 7px;
+  border: 1px solid var(--nautia-border);
+  background: var(--nautia-graphite);
+  color: var(--nautia-muted);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.nautia-icon-choice.is-selected {
+  color: var(--nautia-text);
+  border-color: var(--nautia-cyan);
+  background: rgba(0, 212, 255, 0.14);
+}
+
+.nautia-tag-creator__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.nautia-inline-error {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  background: rgba(127, 29, 29, 0.28);
+  color: #fecaca;
+  font-size: 12px;
+}
+
+/* Modal de criação de pasta (2 etapas obrigatórias) */
+.nautia-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(3, 6, 12, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.nautia-modal-card {
+  width: min(560px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 212, 255, 0.38);
+  background: linear-gradient(155deg, #0f1b2d, #060b14);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.72), 0 0 28px rgba(0, 212, 255, 0.14);
+}
+
+.nautia-modal-step {
+  display: grid;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--nautia-border);
+  background: rgba(5, 9, 16, 0.72);
+}
+
+.nautia-step-badge {
+  font: 600 10px/1 Consolas, monospace;
+  letter-spacing: 0.12em;
+  color: #c792ff;
+}
+
+.nautia-inline-tag-builder {
+  display: grid;
+  gap: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   9. Nautia Action Plan, Diagnósticos, Histórico e Módulo Conversacional
+   -------------------------------------------------------------------------- */
+.nautia-module-shell {
+  display: grid;
+  gap: 16px;
+}
+
+.nautia-action-plan,
+.nautia-diagnostics-panel,
+.nautia-history-panel {
+  display: grid;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 11px;
+  border: 1px solid rgba(157, 78, 221, 0.42);
+  background: linear-gradient(155deg, rgba(16, 23, 38, 0.96), rgba(6, 10, 18, 0.98));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.36);
+}
+
+.nautia-action-plan__header,
+.nautia-action-plan__footer,
+.nautia-diagnostic-card__header,
+.nautia-history-item__main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.nautia-action-plan__meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  font-size: 12px;
+  color: var(--nautia-muted);
+}
+
+.nautia-action-plan__steps {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 5px;
+  font-size: 12.5px;
+}
+
+.nautia-action-plan__steps code {
+  color: #00d4ff;
+  font-family: Consolas, monospace;
+}
+
+.nautia-plan-alerts {
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.nautia-plan-alerts.is-warning {
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.nautia-plan-alerts.is-conflict {
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  background: rgba(120, 53, 15, 0.25);
+  color: #fde68a;
+}
+
+.nautia-plan-alerts ul,
+.nautia-mini-list {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.nautia-diagnostics-list,
+.nautia-history-list {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nautia-diagnostic-card,
+.nautia-history-item {
+  padding: 12px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--nautia-border);
+  background: #09121f;
+  display: grid;
+  gap: 6px;
+}
+
+.nautia-diagnostic-card.status-warning,
+.nautia-diagnostic-card.status-incompatible {
+  border-color: rgba(251, 191, 36, 0.42);
+}
+
+.nautia-status-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  background: rgba(0, 212, 255, 0.12);
+  color: #c8f6ff;
+}
+
+.nautia-status-pill.status-warning {
+  border-color: rgba(251, 191, 36, 0.5);
+  background: rgba(251, 191, 36, 0.12);
+  color: #fde68a;
+}
+
+.nautia-status-pill.status-incompatible {
+  border-color: rgba(248, 113, 113, 0.5);
+  background: rgba(248, 113, 113, 0.14);
+  color: #fecaca;
+}
+
+.nautia-diagnostic-summary,
+.nautia-history-item__result {
+  margin: 0;
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+.nautia-diagnostic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+}
+
+.nautia-mini-label {
+  display: block;
+  font: 600 10px/1.3 Consolas, monospace;
+  letter-spacing: 0.1em;
+  color: #00d4ff;
+  text-transform: uppercase;
+}
+
+.nautia-history-item__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nautia-examples-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.nautia-chat-log {
+  display: grid;
+  gap: 10px;
+  max-height: 380px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.nautia-chat-bubble {
+  padding: 11px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--nautia-border);
+  background: #060d18;
+}
+
+.nautia-chat-bubble.role-nautia {
+  border-color: rgba(157, 78, 221, 0.35);
+  background: linear-gradient(155deg, rgba(16, 24, 38, 0.94), rgba(6, 11, 20, 0.98));
+}
+
+.nautia-chat-bubble p {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+}
+
+.nautia-module-shell .nautia-composer input {
+  flex: 1;
+  background: #081220;
+  color: #eef5ff;
+  border: 1px solid rgba(138, 180, 216, 0.25);
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+
+/* --------------------------------------------------------------------------
+   10. Responsividade e Escalas de Interface (Etapa 10)
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .nautia-deck-toolbar__primary {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nautia-toolbar-search {
+    max-width: none;
+  }
+
+  .nautia-deck-toolbar__right {
+    margin-left: 0;
+    justify-content: space-between;
+  }
+
+  .nautia-tag-creator__row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .nautia-folder-grid,
+  .nautia-asset-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nautia-date-range {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nautia-register-form {
+    padding: 14px;
+  }
+
+  .nautia-form-group {
+    padding: 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. Smart Asset Registration 2.0 (Modalidades, Campos Automáticos e Nautia)
+   -------------------------------------------------------------------------- */
+.nautia-modality-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.nautia-modality-card {
+  display: grid;
+  gap: 7px;
+  text-align: left;
+  padding: 13px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(138, 180, 216, 0.22);
+  background: linear-gradient(155deg, rgba(12, 22, 36, 0.92), rgba(7, 13, 23, 0.96));
+  color: var(--nautia-text);
+  cursor: pointer;
+  transition: border-color 170ms var(--nautia-ease), box-shadow 170ms var(--nautia-ease),
+    transform 170ms var(--nautia-ease), background-color 170ms var(--nautia-ease);
+}
+
+.nautia-modality-card:hover {
+  border-color: rgba(0, 212, 255, 0.48);
+  transform: translateY(-1px);
+}
+
+.nautia-modality-card.is-suggested {
+  border-color: rgba(157, 78, 221, 0.52);
+  box-shadow: 0 0 14px rgba(157, 78, 221, 0.16);
+}
+
+.nautia-modality-card.is-selected {
+  border-color: var(--nautia-cyan);
+  background: linear-gradient(150deg, rgba(0, 212, 255, 0.14), rgba(11, 20, 34, 0.98));
+  box-shadow: inset 0 -2px 0 var(--nautia-cyan), 0 0 18px rgba(0, 212, 255, 0.18);
+}
+
+.nautia-modality-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nautia-modality-card__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(0, 212, 255, 0.12);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--nautia-cyan);
+}
+
+.nautia-modality-card__badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nautia-modality-card__pill {
+  font: 600 9.5px/1 Consolas, monospace;
+  padding: 3px 7px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.nautia-modality-card__pill.is-auto {
+  background: rgba(157, 78, 221, 0.22);
+  border: 1px solid rgba(157, 78, 221, 0.5);
+  color: #ebd9ff;
+}
+
+.nautia-modality-card__pill.is-active {
+  background: rgba(0, 212, 255, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.52);
+  color: #b8f5ff;
+}
+
+.nautia-modality-card__title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #f2f8ff;
+}
+
+.nautia-modality-card__subtitle {
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--nautia-muted);
+}
+
+.nautia-modality-card__examples {
+  font: 500 10.5px/1.3 Consolas, monospace;
+  color: #88b8d6;
+  background: rgba(5, 10, 18, 0.65);
+  padding: 4px 7px;
+  border-radius: 6px;
+  border: 1px solid rgba(138, 180, 216, 0.14);
+}
+
+.nautia-input-with-action {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.nautia-input-with-action input {
+  flex: 1;
+  min-width: 0;
+}
+
+.nautia-btn-inline {
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(0, 212, 255, 0.38);
+  background: rgba(0, 212, 255, 0.12);
+  color: #c5f6ff;
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.nautia-btn-inline:hover {
+  background: rgba(0, 212, 255, 0.22);
+  border-color: var(--nautia-cyan);
+}
+
+.nautia-detected-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  border: 1px dashed rgba(0, 212, 255, 0.32);
+  background: rgba(4, 10, 18, 0.78);
+}
+
+.nautia-detected-item {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.nautia-detected-item__label {
+  font: 600 10px/1.2 Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #86a4c0;
+}
+
+.nautia-detected-item__value {
+  font-size: 12.5px;
+  color: #e8f4ff;
+}
+
+.nautia-detected-item__code {
+  font: 500 11px/1.3 Consolas, monospace;
+  color: #9de8ff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nautia-detected-item__status {
+  font-size: 12px;
+}
+
+.nautia-detected-item__status.is-verified {
+  color: #6ee7b7;
+}
+
+.nautia-detected-item__status.is-warning {
+  color: #fcd34d;
+}
+
+.nautia-detected-item__status.is-unsupported {
+  color: #fca5a5;
+}
+
+.nautia-detected-item__status.is-not_verified {
+  color: #cbd5e1;
+}
+
+.nautia-conditional-section {
+  display: grid;
+  gap: 12px;
+}
+
+.nautia-target-software-block {
+  display: grid;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.nautia-target-software-block__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nautia-target-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nautia-target-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(138, 180, 216, 0.26);
+  background: #091322;
+  color: #cddbef;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 140ms ease, background-color 140ms ease, color 140ms ease;
+}
+
+.nautia-target-pill:hover {
+  border-color: rgba(0, 212, 255, 0.45);
+}
+
+.nautia-target-pill.is-active {
+  border-color: var(--nautia-cyan);
+  background: rgba(0, 212, 255, 0.16);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.16);
+}
+
+.nautia-target-pill__badge {
+  font: 600 9.5px/1 Consolas, monospace;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: rgba(148, 163, 184, 0.16);
+  color: #9beeff;
+}
+
+.nautia-readonly-note {
+  padding: 9px 12px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid rgba(138, 180, 216, 0.18);
+  background: rgba(6, 12, 22, 0.8);
+  color: #b9cde2;
+  font-size: 12px;
+}
+
+.nautia-guidance-banner {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(7, 15, 27, 0.86);
+  font-size: 12px;
+}
+
+.nautia-guidance-banner.is-warning {
+  border-color: rgba(251, 191, 36, 0.45);
+  background: rgba(45, 28, 8, 0.35);
+}
+
+.nautia-guidance-banner.is-error {
+  border-color: rgba(248, 113, 113, 0.55);
+  background: rgba(69, 15, 20, 0.42);
+}
+
+.nautia-guidance-banner__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: #e6f4ff;
+}
+
+.nautia-guidance-banner__explanation {
+  margin: 0;
+  color: #bed0e4;
+  line-height: 1.45;
+}
+
+.nautia-guidance-banner__warnings {
+  margin: 4px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 3px;
+  color: #fde68a;
+}
+
+/* --------------------------------------------------------------------------
+   12. Smart Tags & Classification 3.0 (TagPicker Reutilizável, Inspetor e Escopos)
+   -------------------------------------------------------------------------- */
+.rb-tag-picker {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.rb-tag-picker.is-open {
+  z-index: 48;
+}
+
+.rb-tag-picker__label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.rb-tag-picker__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rb-tag-picker__title-icon {
+  width: 13px;
+  height: 13px;
+  color: var(--nautia-cyan);
+  flex-shrink: 0;
+}
+
+.rb-tag-picker__optional {
+  font: 500 10.5px/1 var(--font-sans, inherit);
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(157, 78, 221, 0.34);
+  background: rgba(157, 78, 221, 0.12);
+  color: #dcc2ff;
+  letter-spacing: 0.02em;
+}
+
+.rb-tag-picker__control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  min-height: 40px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(138, 180, 216, 0.28);
+  background: linear-gradient(180deg, #0d1829, #09111e);
+  cursor: text;
+  transition: border-color 160ms var(--nautia-ease), box-shadow 160ms var(--nautia-ease),
+    background-color 160ms var(--nautia-ease);
+}
+
+.rb-tag-picker__anchor {
+  position: relative;
+  min-width: 0;
+}
+
+.rb-tag-picker.is-compact .rb-tag-picker__control {
+  min-height: 34px;
+  padding: 3px 8px;
+  border-radius: 7px;
+}
+
+.rb-tag-picker__control:hover:not(.is-disabled) {
+  border-color: rgba(0, 212, 255, 0.45);
+  background: linear-gradient(180deg, #101e33, #0b1422);
+}
+
+.rb-tag-picker__control.is-focused,
+.rb-tag-picker__control.is-open {
+  border-color: rgba(0, 212, 255, 0.68);
+  background: linear-gradient(180deg, #101f35, #0a1322);
+  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.15);
+}
+
+.rb-tag-picker .rb-tag-picker__input {
+  flex: 1 1 130px;
+  min-width: 90px;
+  min-height: 26px;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #eef5ff;
+  font-size: 13px;
+  line-height: 1.3;
+  box-shadow: none;
+}
+
+.rb-tag-picker.is-compact .rb-tag-picker__input {
+  min-height: 24px;
+  font-size: 12px;
+}
+
+.rb-tag-picker .rb-tag-picker__input:focus-visible {
+  outline: none;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.rb-tag-picker .rb-tag-picker__input::placeholder {
+  color: #7d96b0;
+}
+
+.rb-tag-picker__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+  padding: 3px 7px 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 212, 255, 0.34);
+  background: rgba(0, 212, 255, 0.12);
+  color: #e4f6ff;
+  font-size: 11.5px;
+  line-height: 1.2;
+  transition: border-color 140ms var(--nautia-ease), background-color 140ms var(--nautia-ease);
+}
+
+.rb-tag-picker__chip.accent-purple {
+  border-color: rgba(157, 78, 221, 0.45);
+  background: rgba(157, 78, 221, 0.16);
+  color: #eedfff;
+}
+
+.rb-tag-picker__chip.accent-emerald {
+  border-color: rgba(52, 211, 153, 0.4);
+  background: rgba(16, 185, 129, 0.14);
+  color: #d1fae5;
+}
+
+.rb-tag-picker__chip.accent-amber {
+  border-color: rgba(251, 191, 36, 0.42);
+  background: rgba(245, 158, 11, 0.14);
+  color: #fef3c7;
+}
+
+.rb-tag-picker__chip-icon {
+  width: 11px;
+  height: 11px;
+  opacity: 0.88;
+  flex-shrink: 0;
+}
+
+.rb-tag-picker__chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--tag-custom-color, var(--nautia-cyan));
+  flex-shrink: 0;
+}
+
+.rb-tag-picker__chip-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rb-tag-picker__chip-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(226, 242, 255, 0.72);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.rb-tag-picker__chip-remove:hover,
+.rb-tag-picker__chip-remove:focus-visible {
+  outline: none;
+  background: rgba(0, 212, 255, 0.22);
+  color: #ffffff;
+}
+
+.rb-tag-picker__toggle {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #7ea7cb;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 140ms var(--nautia-ease), background-color 140ms var(--nautia-ease);
+}
+
+.rb-tag-picker__toggle:hover {
+  color: var(--nautia-cyan);
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.rb-tag-picker__chevron {
+  width: 15px;
+  height: 15px;
+  transition: transform 160ms var(--nautia-ease);
+}
+
+.rb-tag-picker__chevron.is-open {
+  transform: rotate(180deg);
+}
+
+.rb-tag-picker__menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  z-index: 75;
+  max-height: 220px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.42);
+  background: #0a1423;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.78), 0 0 18px rgba(0, 212, 255, 0.14);
+}
+
+.rb-tag-picker__menu.is-upward {
+  top: auto;
+  bottom: calc(100% + 5px);
+}
+
+.rb-tag-picker__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  color: #e6f0fc;
+  font-size: 12.5px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(138, 180, 216, 0.06);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.rb-tag-picker__option:last-child {
+  border-bottom: 0;
+}
+
+.rb-tag-picker__option.is-highlighted,
+.rb-tag-picker__option:hover {
+  background: #132842;
+  color: #ffffff;
+}
+
+.rb-tag-picker__option.is-create.is-highlighted,
+.rb-tag-picker__option.is-create:hover {
+  background: linear-gradient(90deg, rgba(157, 78, 221, 0.24), rgba(19, 40, 66, 0.94));
+}
+
+.rb-tag-picker__option-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.rb-tag-picker__option-icon {
+  width: 13px;
+  height: 13px;
+  color: var(--nautia-cyan);
+  flex-shrink: 0;
+}
+
+.rb-tag-picker__plus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  background: rgba(157, 78, 221, 0.25);
+  color: #e9d5ff;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.rb-tag-picker__option-badge {
+  font: 600 9.5px/1 Consolas, monospace;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: rgba(148, 163, 184, 0.14);
+  color: #b8cae0;
+  flex-shrink: 0;
+}
+
+.rb-tag-picker__option-badge.is-purple {
+  background: rgba(157, 78, 221, 0.22);
+  border: 1px solid rgba(157, 78, 221, 0.36);
+  color: #e9d5ff;
+}
+
+.rb-tag-picker__empty {
+  padding: 10px 12px;
+  font-size: 12px;
+  color: #8aa5c1;
+}
+
+.studio-inspector__tag-usage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 10.5px;
+  color: var(--nautia-muted);
+}
+
+.studio-inspector__tag-usage-item {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(138, 180, 216, 0.08);
+}
+
+.studio-inspector__suggested-tags,
+.nautia-universal-filters__tag-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.studio-inspector__suggested-tag-btn,
+.studio-inspector__discovered-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(138, 180, 216, 0.25);
+  background: rgba(13, 24, 40, 0.85);
+  color: #cfe4fa;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.studio-inspector__suggested-tag-btn:hover,
+.studio-inspector__discovered-pill:hover {
+  border-color: var(--nautia-cyan);
+  color: #ffffff;
+}
+
+.studio-inspector__header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.studio-inspector__category-badge,
+.studio-inspector__category-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: #d9eeff;
+}
+
+.studio-inspector__section {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(138, 180, 216, 0.14);
+  background: rgba(9, 16, 29, 0.68);
+}
+
+.studio-inspector__section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.studio-inspector__section-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #cfe4f8;
+}
+
+.studio-inspector__meta-full {
+  grid-column: 1 / -1;
+}
+
+.studio-inspector__path {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #c2d6eb;
+}
+
+.studio-inspector__category-cell,
+.studio-inspector__folder-cell {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.studio-inspector__inline-select {
+  padding: 3px 7px;
+  border-radius: 6px;
+  border: 1px solid rgba(138, 180, 216, 0.26);
+  background: rgba(8, 16, 28, 0.92);
+  color: #e6f4ff;
+  font-size: 11px;
+}
+
+.studio-inspector__nautia-suggestions,
+.studio-inspector__folder-tags-card {
+  display: grid;
+  gap: 7px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(157, 78, 221, 0.34);
+  background: linear-gradient(155deg, rgba(22, 16, 38, 0.78), rgba(8, 13, 24, 0.9));
+}
+
+.studio-inspector__nautia-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: #e9d5ff;
+}
+
+.studio-inspector__nautia-note {
+  margin-left: auto;
+  font-size: 10px;
+  color: #c4b5fd;
+}
+
+.studio-inspector__category-suggestion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 11.5px;
+}
+
+.studio-inspector__category-suggestion p {
+  margin: 0;
+}
+
+.studio-inspector__folder-tags-group {
+  display: grid;
+  gap: 4px;
+}
+
+.studio-inspector__sub-label {
+  font-size: 10.5px;
+  color: var(--nautia-muted);
+}
+
+.studio-inspector__scope-toggle {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.record-type-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.record-tag-origin-badge {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  background: rgba(0, 212, 255, 0.1);
+  color: #9beeff;
+}
+
+.nautia-universal-filters__asset-tag-bar {
+  display: grid;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(138, 180, 216, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nautia-deck-shell *,
+  .nautia-register-form *,
+  .nautia-module-shell * {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Etapa 11 — Drag-and-Drop e Modal "Mover para..." no Convés */
+.is-drop-target-valid {
+  outline: 2px solid #00d4ff !important;
+  outline-offset: -2px;
+  background: rgba(0, 212, 255, 0.16) !important;
+  box-shadow: inset 0 0 0 1px rgba(0, 212, 255, 0.45), 0 0 16px rgba(0, 212, 255, 0.22);
+}
+
+.is-drop-target-invalid {
+  outline: 2px dashed rgba(248, 113, 113, 0.85) !important;
+  outline-offset: -2px;
+  background: rgba(239, 68, 68, 0.14) !important;
+  cursor: not-allowed;
+}
+
+.nautia-drag-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  background: rgba(8, 18, 34, 0.92);
+  color: #cffafe;
+  font-size: 12px;
+  flex: 0 0 auto;
+}
+
+.nautia-drag-status.is-valid {
+  border-color: rgba(0, 212, 255, 0.72);
+  background: rgba(0, 212, 255, 0.12);
+}
+
+.nautia-drag-status.is-invalid {
+  border-color: rgba(248, 113, 113, 0.72);
+  background: rgba(239, 68, 68, 0.14);
+  color: #fecaca;
+}
+
+.nautia-move-modal {
+  max-width: min(620px, 94vw);
+  max-height: min(82vh, 720px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.nautia-move-modal__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nautia-move-modal__search {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 8px 11px;
+  border-radius: 8px;
+  border: 1px solid rgba(138, 180, 216, 0.24);
+  background: rgba(7, 13, 25, 0.85);
+  color: #e2e8f0;
+  font-size: 13px;
+}
+
+.nautia-move-modal__tree {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(138, 180, 216, 0.16);
+  background: rgba(6, 11, 21, 0.75);
+}
+
+.nautia-move-modal__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #e2e8f0;
+  text-align: left;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.nautia-move-modal__item:hover:not(:disabled) {
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+.nautia-move-modal__item.is-selected {
+  background: rgba(0, 212, 255, 0.16);
+  border-color: #00d4ff;
+  color: #ffffff;
+}
+
+.nautia-move-modal__item.is-invalid,
+.nautia-move-modal__item:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+.nautia-move-modal__item-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.nautia-move-modal__path {
+  font-size: 11px;
+  color: var(--nautia-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nautia-move-modal__item-meta {
+  font-size: 11px;
+  color: var(--nautia-muted);
+  white-space: nowrap;
+}
+
+.nautia-move-modal__create-box {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(157, 78, 221, 0.38);
+  background: rgba(16, 15, 34, 0.76);
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.nautia-move-modal__create-fields {
+  display: grid;
+  gap: 8px;
+}
+
+.nautia-move-modal__create-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Etapa 12 — Catálogo Global de Etiquetas & Gerenciar Etiquetas */
+.studio-rail__asset-tags {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(138, 180, 216, 0.14);
+}
+
+.studio-rail__asset-tags-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.studio-rail__sublabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--nautia-muted);
+}
+
+.studio-rail__asset-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.studio-rail__asset-tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(8, 18, 34, 0.72);
+  color: #dbeafe;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.studio-rail__asset-tag-chip.is-active {
+  border-color: #00d4ff;
+  background: rgba(0, 212, 255, 0.18);
+  color: #ffffff;
+}
+
+.studio-rail__asset-tag-chip small {
+  opacity: 0.72;
+  font-size: 10px;
+}
+
+.nautia-tag-manager-modal {
+  max-width: min(680px, 95vw);
+  max-height: min(84vh, 740px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.nautia-tag-manager__create {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.nautia-tag-manager__create input,
+.nautia-tag-manager__create select,
+.nautia-tag-manager__search-bar input,
+.nautia-tag-manager__edit-inline input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(138, 180, 216, 0.24);
+  background: rgba(7, 13, 25, 0.88);
+  color: #e2e8f0;
+  font-size: 13px;
+}
+
+.nautia-tag-manager__search-bar input {
+  width: 100%;
+}
+
+.nautia-tag-manager__confirm-delete {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(248, 113, 113, 0.5);
+  background: rgba(127, 29, 29, 0.28);
+  color: #fecaca;
+  font-size: 12.5px;
+}
+
+.nautia-tag-manager__confirm-delete p {
+  margin: 0;
+}
+
+.nautia-tag-manager__confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.nautia-tag-manager__list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(138, 180, 216, 0.16);
+  background: rgba(6, 11, 21, 0.72);
+}
+
+.nautia-tag-manager__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(138, 180, 216, 0.12);
+  background: rgba(12, 20, 36, 0.78);
+}
+
+.nautia-tag-manager__row-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.nautia-tag-manager__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #00d4ff;
+  flex: 0 0 auto;
+}
+
+.nautia-tag-manager__dot.accent-purple {
+  background: #a855f7;
+}
+
+.nautia-tag-manager__dot.accent-emerald {
+  background: #10b981;
+}
+
+.nautia-tag-manager__dot.accent-amber {
+  background: #f59e0b;
+}
+
+.nautia-tag-manager__info {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.nautia-tag-manager__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.nautia-tag-manager__meta {
+  font-size: 11px;
+  color: var(--nautia-muted);
+}
+
+.nautia-tag-manager__edit-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 auto;
+}
+
+.nautia-tag-manager__edit-inline input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.nautia-tag-manager__row-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.nautia-tag-manager__scope-badge {
+  font-size: 10.5px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(138, 180, 216, 0.24);
+  color: var(--nautia-muted);
+}
+
+.rb-tag-picker__footer-create {
+  border-top: 1px solid rgba(138, 180, 216, 0.16);
+}
+
+/* Etapa 19 — Menu Contextual Flutuante e Painel Detalhes Inteligente */
+.rb-context-menu {
+  position: fixed;
+  z-index: 1200;
+  min-width: 220px;
+  max-width: min(290px, calc(100vw - 16px));
+  max-height: calc(100vh - 16px);
+  overflow-y: auto;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(120, 172, 224, 0.28);
+  background: linear-gradient(165deg, rgba(14, 23, 39, 0.97), rgba(8, 14, 25, 0.98));
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 42px rgba(2, 6, 15, 0.72), 0 0 0 1px rgba(0, 212, 255, 0.08);
+  color: #e6f2ff;
+  outline: none;
+}
+
+.rb-context-menu__header {
+  padding: 5px 9px 7px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #95b5d6;
+  border-bottom: 1px solid rgba(138, 180, 216, 0.14);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rb-context-menu__group {
+  display: grid;
+  gap: 2px;
+}
+
+.rb-context-menu__separator {
+  height: 1px;
+  margin: 5px 6px;
+  background: rgba(138, 180, 216, 0.14);
+}
+
+.rb-context-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 7px 9px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #e6f2ff;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.rb-context-menu__item:hover:not(:disabled),
+.rb-context-menu__item.is-focused:not(:disabled),
+.rb-context-menu__item:focus-visible:not(:disabled) {
+  background: rgba(0, 212, 255, 0.14);
+  color: #ffffff;
+  outline: none;
+}
+
+.rb-context-menu__item.is-danger {
+  color: #fda4af;
+}
+
+.rb-context-menu__item.is-danger:hover:not(:disabled),
+.rb-context-menu__item.is-danger.is-focused:not(:disabled),
+.rb-context-menu__item.is-danger:focus-visible:not(:disabled) {
+  background: rgba(239, 68, 68, 0.18);
+  color: #ffe4e6;
+}
+
+.rb-context-menu__item:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.rb-context-menu__item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  color: #7cd8ff;
+}
+
+.rb-context-menu__item.is-danger .rb-context-menu__item-icon {
+  color: #fb7185;
+}
+
+.rb-context-menu__item-label {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.rb-context-menu__shortcut {
+  font-size: 10.5px;
+  color: #82a2c4;
+}
+
+.studio-inspector__header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.studio-inspector__header-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.studio-inspector__status-text {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #9cb6d1;
+}
+
+.studio-inspector__status-text.is-verified {
+  color: #6ee7b7;
+}
+
+.studio-inspector__status-text.is-warning {
+  color: #fcd34d;
+}
+
+.studio-inspector__status-text.is-unsupported {
+  color: #fca5a5;
+}
+
+.studio-inspector__asset-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.studio-inspector__asset-title span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.studio-inspector__kind-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7cd8ff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+}
+
+.studio-inspector__verification-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.studio-inspector__verification-pill.is-verified {
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #6ee7b7;
+}
+
+.studio-inspector__verification-pill.is-warning {
+  background: rgba(245, 158, 11, 0.16);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fcd34d;
+}
+
+.studio-inspector__verification-pill.is-not_verified {
+  background: rgba(148, 163, 184, 0.14);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  color: #cbd5e1;
+}
+
+.studio-inspector__verification-pill.is-unsupported {
+  background: rgba(239, 68, 68, 0.16);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+}
+
+.studio-inspector__collapsible {
+  padding: 0;
+  overflow: hidden;
+}
+
+.studio-inspector__collapsible > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #d6e7fa;
+  user-select: none;
+}
+
+.studio-inspector__collapsible > summary::-webkit-details-marker {
+  display: none;
+}
+
+.studio-inspector__collapsible-body {
+  display: grid;
+  gap: 8px;
+  padding: 0 12px 11px;
+  border-top: 1px solid rgba(138, 180, 216, 0.12);
+  padding-top: 9px;
+}
+
+.studio-inspector__path-box {
+  display: grid;
+  gap: 6px;
+  padding: 7px 9px;
+  border-radius: 8px;
+  border: 1px solid rgba(138, 180, 216, 0.16);
+  background: rgba(6, 11, 21, 0.72);
+  max-width: 100%;
+}
+
+.studio-inspector__path-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.studio-inspector__diagnostic-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.48;
+  color: #d2e3f4;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.studio-inspector__folder-card {
+  display: grid;
+  gap: 10px;
+}
+
+.studio-inspector__folder-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.studio-inspector__folder-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.studio-inspector__folder-title h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #f0f8ff;
+  overflow-wrap: anywhere;
+}
+
+.studio-inspector__folder-location {
+  margin: 2px 0 0;
+  font-size: 11.5px;
+  color: var(--nautia-muted);
+}
+
+.studio-inspector__empty-clean {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 28px 16px;
+  border-radius: 10px;
+  border: 1px dashed rgba(138, 180, 216, 0.22);
+  background: rgba(7, 13, 24, 0.45);
+  color: #9cb6d1;
+  font-size: 12.5px;
+}
+
+.studio-inspector__empty-clean p {
+  margin: 0;
+}
+
+.studio-inspector__subcollapsible {
+  border-radius: 8px;
+  border: 1px solid rgba(138, 180, 216, 0.14);
+  background: rgba(6, 12, 22, 0.55);
+}
+
+.studio-inspector__subcollapsible > summary {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #bdd5ee;
+}
+
+.studio-inspector__folder-tag-editor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(138, 180, 216, 0.12);
+}
+
+.nautia-compact-modal {
+  max-width: min(460px, 94vw);
+  display: grid;
+  gap: 12px;
+}

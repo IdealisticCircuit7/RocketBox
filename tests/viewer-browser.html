@@ -1,0 +1,22 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>RocketBox Viewer — fixtures de validação</title>
+<style>body{background:#08121c;color:#c4e9fa;font:14px system-ui;margin:20px}.cases{display:flex;gap:12px}section{width:31%;height:360px}article{height:300px}canvas{width:100%;height:100%}button{margin:4px}</style>
+<h1>Viewer 2.0 — recursos de teste</h1><p>Somente fixtures. Nenhum registro da biblioteca é acessado.</p><div class="cases"></div><pre id="result">Carregando…</pre>
+<script type="module">
+import {mountModelViewer} from '/services/modelViewer.ts';
+const results=[];
+for(const ext of ['obj','fbx','gltf']) {
+ const section=document.createElement('section');section.innerHTML=`<h2>${ext.toUpperCase()}</h2><article></article>`;document.querySelector('.cases').append(section);
+ try {
+ let bytes;
+ if(ext==='gltf'){
+ const positions=new Float32Array([0,0,0,1,0,0,0,1,0]);const raw=btoa(String.fromCharCode(...new Uint8Array(positions.buffer)));
+ const json={asset:{version:'2.0'},buffers:[{byteLength:36,uri:'data:application/octet-stream;base64,'+raw}],bufferViews:[{buffer:0,byteLength:36}],accessors:[{bufferView:0,componentType:5126,count:3,type:'VEC3',min:[0,0,0],max:[1,1,0]}],materials:[{name:'Cobre de teste',pbrMetallicRoughness:{baseColorFactor:[.8,.3,.1,1]}}],meshes:[{primitives:[{attributes:{POSITION:0},material:0}]}],nodes:[{mesh:0}],scenes:[{nodes:[0]}],scene:0};bytes=new TextEncoder().encode(JSON.stringify(json)).buffer;
+ }else {const fixtures={"obj": "IyBSb2NrZXRCb3ggdmlld2VyIHRlc3QgZml4dHVyZTogb25lIHRyaWFuZ2xlLCBubyBleHRlcm5hbCByZXNvdXJjZXMKdiAtMSAwIDAKdiAxIDAgMAp2IDAgMSAwCmYgMSAyIDMK", "fbx": "OyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIA0KOyBGQlggNy40LjAgcHJvamVjdCBmaWxlDQpGQlhIZWFkZXJFeHRlbnNpb246ICB7DQoJRkJYSGVhZGVyVmVyc2lvbjogMTAwMw0KCUZCWFZlcnNpb246IDc0MDANCn0NCk9iamVjdHM6ICB7DQoJR2VvbWV0cnk6IDEsICJHZW9tZXRyeTo6VHJpYW5nbGUiLCAiTWVzaCIgew0KCQlWZXJ0aWNlczogKjkgew0KCQkJYTogMCwwLDAsMSwwLDAsMCwxLDANCgkJfQ0KCQlQb2x5Z29uVmVydGV4SW5kZXg6ICozIHsNCgkJCWE6IDAsMSwtMw0KCQl9DQoJfQ0KCU1vZGVsOiAyLCAiTW9kZWw6OlRyaWFuZ2xlIiwgIk1lc2giIHsNCgkJVmVyc2lvbjogMjMyDQoJCVByb3BlcnRpZXM3MDogIHsNCgkJCVA6ICJMY2wgVHJhbnNsYXRpb24iLCAiTGNsIFRyYW5zbGF0aW9uIiwgIiIsICJBIiwwLDAsMA0KCQkJUDogIkxjbCBSb3RhdGlvbiIsICJMY2wgUm90YXRpb24iLCAiIiwgIkEiLDAsMCwwDQoJCQlQOiAiTGNsIFNjYWxpbmciLCAiTGNsIFNjYWxpbmciLCAiIiwgIkEiLDEsMSwxDQoJCX0NCgkJU2hhZGluZzogVA0KCQlDdWxsaW5nOiAiQ3VsbGluZ09mZiINCgl9DQp9DQpDb25uZWN0aW9uczogIHsNCglDOiAiT08iLDEsMg0KCUM6ICJPTyIsMiwwDQp9DQo="};bytes=Uint8Array.from(atob(fixtures[ext]),c=>c.charCodeAt(0)).buffer;}
+ const viewer=await mountModelViewer(section.querySelector('article'),bytes,ext);viewer.projection(true);viewer.view('front');viewer.wireframe(true);viewer.wireframe(false);
+ results.push({format:ext,vertices:viewer.vertices,materials:viewer.materials.map(m=>m.name),state:'renderizado'});
+ const reset=document.createElement('button');reset.textContent='Reset '+ext;reset.onclick=()=>viewer.reset();section.append(reset);
+ window.addEventListener('pagehide',()=>viewer.dispose(),{once:true});
+ }catch(error){results.push({format:ext,error:String(error)});}
+ document.querySelector('#result').textContent=JSON.stringify(results,null,2);
+}
+</script></html>

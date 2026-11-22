@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64" fill="none">
+<title>GLB solid cube — RocketBox</title>
+<defs>
+  <linearGradient id="cyan" x1="12" y1="8" x2="50" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#CBFAFF"/><stop offset=".45" stop-color="#5BE3FA"/><stop offset="1" stop-color="#289CCF"/></linearGradient>
+  <linearGradient id="blue" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse"><stop stop-color="#86DAFF"/><stop offset=".48" stop-color="#398DFA"/><stop offset="1" stop-color="#5462CF"/></linearGradient>
+  <linearGradient id="purple" x1="12" y1="12" x2="52" y2="54" gradientUnits="userSpaceOnUse"><stop stop-color="#A9DEFF"/><stop offset=".55" stop-color="#8E82EA"/><stop offset="1" stop-color="#6950AE"/></linearGradient>
+  <linearGradient id="silver" x1="12" y1="8" x2="52" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#F1F7FD"/><stop offset=".5" stop-color="#BBCAD8"/><stop offset="1" stop-color="#73849B"/></linearGradient>
+  <linearGradient id="metal" x1="16" y1="14" x2="48" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#F3FCFF"/><stop offset=".25" stop-color="#BFD8E9"/><stop offset=".46" stop-color="#667C9D"/><stop offset=".52" stop-color="#273A59"/><stop offset=".72" stop-color="#8799B8"/><stop offset="1" stop-color="#3F497B"/></linearGradient>
+  <linearGradient id="paper" x1="15" y1="8" x2="49" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#263D55"/><stop offset="1" stop-color="#142039"/></linearGradient>
+</defs>
+<path d="M32 8 53 20 32 32 11 20Z" fill="url(#cyan)" stroke="#A6EDFF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 20 32 32 32 56 11 44Z" fill="url(#blue)" stroke="#6BCDF2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 32 53 20 53 44 32 56Z" fill="url(#purple)" stroke="#9294F5" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

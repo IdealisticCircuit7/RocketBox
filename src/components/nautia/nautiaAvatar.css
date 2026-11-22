@@ -1,0 +1,38 @@
+.nautia-animated-avatar {position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:64px 12px 54px;overflow:hidden;z-index:1;}
+.nautia-animated-avatar canvas {display:none;width:100%;height:100%;object-fit:contain;}
+.nautia-animated-avatar canvas.is-ready {display:block;}
+.studio-portrait .nautia-animated-avatar__fallback {object-fit:contain;object-position:center;}
+.nautia-avatar-error {position:absolute;top:8px;left:8px;right:8px;font-size:11px;color:#c3d5e7;background:#101b2bdd;padding:6px;z-index:4;}
+.nautia-avatar-settings {position:relative;z-index:4;font-size:11px;background:rgba(11,16,32,0.88);border:1px solid rgba(152,84,218,0.34);color:#c3d5e7;border-radius:8px;padding:4px 8px;max-width:170px;}
+.nautia-avatar-settings summary {cursor:pointer;}
+.nautia-avatar-settings input {width:90px;display:block;}
+.nautia-avatar-settings label {display:block;margin-top:6px;}
+.nautia-thought {position:absolute;right:14px;top:66px;max-width:118px;padding:9px 11px;background:linear-gradient(155deg,rgba(28,22,56,0.92),rgba(13,18,38,0.95));border:1px solid rgba(152,84,218,0.55);border-radius:16px;color:#e9defc;font-size:11.5px;line-height:1.35;text-align:center;box-shadow:0 8px 22px rgba(7,10,24,0.6),0 0 14px rgba(152,84,218,0.18);pointer-events:none;z-index:3;animation:nautia-thought-appear .2s ease-out,nautia-thought-float 4s .2s ease-in-out infinite;}
+.nautia-thought span {display:block;animation:nautia-thought-appear .2s ease-out;}
+.nautia-thought i {position:absolute;left:12px;bottom:-9px;width:8px;height:8px;border:1px solid rgba(152,84,218,0.5);background:#1b183a;border-radius:50%;}
+.nautia-thought i+i {left:4px;bottom:-17px;width:5px;height:5px;border-color:rgba(5,198,232,0.45);}
+.nautia-sleep-zzz {position:absolute;left:calc(50% + 26px);top:72px;width:35px;height:50px;pointer-events:none;z-index:3;}
+.nautia-sleep-zzz span {position:absolute;bottom:0;color:#75cddd;font-size:14px;font-weight:600;opacity:0;animation:nautia-zzz 3s ease-out infinite;}
+.nautia-sleep-zzz span:nth-child(2) {animation-delay:1s;color:#b09ce0;}
+.nautia-sleep-zzz span:nth-child(3) {animation-delay:2s;}
+.nautia-animated-avatar[data-animate="false"] :is(.nautia-thought,.nautia-thought span,.nautia-sleep-zzz span) {animation-play-state:paused;}
+.nautia-avatar-diagnostics {position:absolute;bottom:78px;left:8px;right:8px;z-index:2;font-size:11px;color:#c3d5e7;}
+.nautia-avatar-diagnostics summary {cursor:pointer;width:fit-content;background:#101b2be8;border-radius:5px;padding:4px 6px;}
+.nautia-avatar-diagnostics[open] {padding:8px;max-height:55%;overflow:auto;background:#101b2bf5;border:1px solid #58829a66;border-radius:8px;}
+.nautia-avatar-diagnostics p {font-size:10px;margin:6px 0;}
+.nautia-avatar-diagnostics output {display:block;white-space:normal;margin-top:6px;}
+.nautia-avatar-diagnostic-actions {display:flex;flex-wrap:wrap;gap:4px;}
+.nautia-avatar-diagnostic-actions button {font:inherit;color:#c3d5e7;background:#182b3f;border:1px solid #58829a66;border-radius:5px;padding:5px;cursor:pointer;}
+.nautia-stream-status {display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;flex-shrink:0;}
+.nautia-stream-status>span {min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#aebdce;}
+.nautia-stream-status>button {flex-shrink:0;}
+@keyframes nautia-thought-appear {from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+@keyframes nautia-thought-float {50%{transform:translateY(-2px)}}
+@keyframes nautia-zzz {0%{opacity:0;transform:translate(0,0) scale(.8)}20%{opacity:.85}100%{opacity:0;transform:translate(-8px,-42px) scale(1.15)}}
+:is(.no-animations,.performance-mode) :is(.nautia-thought,.nautia-thought span,.nautia-sleep-zzz span) {animation:none;}
+:is(.no-animations,.performance-mode) .nautia-sleep-zzz span {opacity:1;}
+:is(.no-animations,.performance-mode) .nautia-sleep-zzz span:nth-child(2) {transform:translate(10px,-8px);}
+:is(.no-animations,.performance-mode) .nautia-sleep-zzz span:nth-child(3) {transform:translate(20px,-16px);}
+@media(prefers-reduced-motion:reduce){.nautia-thought,.nautia-thought span,.nautia-sleep-zzz span{animation:none}.nautia-sleep-zzz span{opacity:1}.nautia-sleep-zzz span:nth-child(2){transform:translate(10px,-8px)}.nautia-sleep-zzz span:nth-child(3){transform:translate(20px,-16px)}}
+@container(max-width:620px){.nautia-animated-avatar{padding:4px 4px 46px;}}
+@container(max-width:620px){.nautia-avatar-diagnostics{bottom:48px;left:8px;right:auto;max-width:45%}.nautia-avatar-diagnostics[open]{max-height:90%;}.nautia-thought{top:8px;}.nautia-sleep-zzz{top:20px;}}

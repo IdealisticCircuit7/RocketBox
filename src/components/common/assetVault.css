@@ -1,0 +1,98 @@
+.asset-vault {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.asset-vault fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+.asset-vault label {
+  display: block;
+  margin: 8px 0;
+  font-size: 0.76rem;
+  color: #b7cadf;
+}
+.asset-vault select,
+.asset-vault textarea,
+.asset-vault input:not([type=checkbox]) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  color: #eaf4ff;
+  background: rgba(8, 16, 30, 0.85);
+  border: 1px solid rgba(114, 152, 209, 0.28);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 0.76rem;
+}
+.asset-vault textarea {
+  min-height: 68px;
+  resize: vertical;
+}
+.asset-vault button {
+  color: #dcebff;
+  background: rgba(16, 31, 52, 0.85);
+  border: 1px solid rgba(114, 152, 209, 0.28);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.76rem;
+  cursor: pointer;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+.asset-vault button:hover:not(:disabled) {
+  border-color: rgba(5, 198, 232, 0.55);
+  background: rgba(20, 40, 68, 0.95);
+}
+.asset-vault button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.asset-vault p {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: #9bb4d1;
+  margin: 6px 0;
+}
+.asset-vault pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 0.7rem;
+  max-height: 150px;
+  overflow: auto;
+  background: rgba(6, 12, 24, 0.65);
+  padding: 6px;
+  border-radius: 6px;
+}
+.asset-vault__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0;
+}
+.asset-vault__review {
+  border: 1px solid rgba(5, 198, 232, 0.45);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 8px 0;
+  background: rgba(8, 20, 38, 0.7);
+}
+.asset-vault details {
+  border-bottom: 1px solid rgba(114, 152, 209, 0.2);
+  padding: 6px 0;
+}
+.asset-vault dd {
+  margin: 0 0 6px;
+  font-size: 0.76rem;
+  overflow-wrap: anywhere;
+}

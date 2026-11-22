@@ -1,0 +1,492 @@
+[
+  {
+    "icon": "3d-unknown",
+    "size": 512,
+    "transparentPixels": 157855,
+    "visiblePixels": 104289,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "3d-unknown",
+    "size": 256,
+    "transparentPixels": 39330,
+    "visiblePixels": 26206,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "3d-unknown",
+    "size": 48,
+    "transparentPixels": 1318,
+    "visiblePixels": 986,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "3d-unknown",
+    "size": 32,
+    "transparentPixels": 585,
+    "visiblePixels": 439,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "3d-unknown",
+    "size": 24,
+    "transparentPixels": 308,
+    "visiblePixels": 268,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "animation",
+    "size": 512,
+    "transparentPixels": 225526,
+    "visiblePixels": 36618,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "animation",
+    "size": 256,
+    "transparentPixels": 56126,
+    "visiblePixels": 9410,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "animation",
+    "size": 48,
+    "transparentPixels": 1887,
+    "visiblePixels": 417,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "animation",
+    "size": 32,
+    "transparentPixels": 809,
+    "visiblePixels": 215,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "animation",
+    "size": 24,
+    "transparentPixels": 438,
+    "visiblePixels": 138,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "audio",
+    "size": 512,
+    "transparentPixels": 219052,
+    "visiblePixels": 43092,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "audio",
+    "size": 256,
+    "transparentPixels": 54700,
+    "visiblePixels": 10836,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "audio",
+    "size": 48,
+    "transparentPixels": 1760,
+    "visiblePixels": 544,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "audio",
+    "size": 32,
+    "transparentPixels": 786,
+    "visiblePixels": 238,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "audio",
+    "size": 24,
+    "transparentPixels": 412,
+    "visiblePixels": 164,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "blender",
+    "size": 512,
+    "transparentPixels": 194668,
+    "visiblePixels": 67476,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "blender",
+    "size": 256,
+    "transparentPixels": 48483,
+    "visiblePixels": 17053,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "blender",
+    "size": 48,
+    "transparentPixels": 1645,
+    "visiblePixels": 659,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "blender",
+    "size": 32,
+    "transparentPixels": 720,
+    "visiblePixels": 304,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "blender",
+    "size": 24,
+    "transparentPixels": 391,
+    "visiblePixels": 185,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "document",
+    "size": 512,
+    "transparentPixels": 152659,
+    "visiblePixels": 109485,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "document",
+    "size": 256,
+    "transparentPixels": 38136,
+    "visiblePixels": 27400,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "document",
+    "size": 48,
+    "transparentPixels": 1290,
+    "visiblePixels": 1014,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "document",
+    "size": 32,
+    "transparentPixels": 577,
+    "visiblePixels": 447,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "document",
+    "size": 24,
+    "transparentPixels": 307,
+    "visiblePixels": 269,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "fbx",
+    "size": 512,
+    "transparentPixels": 208564,
+    "visiblePixels": 53580,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "fbx",
+    "size": 256,
+    "transparentPixels": 51819,
+    "visiblePixels": 13717,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "fbx",
+    "size": 48,
+    "transparentPixels": 1678,
+    "visiblePixels": 626,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "fbx",
+    "size": 32,
+    "transparentPixels": 721,
+    "visiblePixels": 303,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "fbx",
+    "size": 24,
+    "transparentPixels": 394,
+    "visiblePixels": 182,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "file-unknown",
+    "size": 512,
+    "transparentPixels": 152659,
+    "visiblePixels": 109485,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "file-unknown",
+    "size": 256,
+    "transparentPixels": 38136,
+    "visiblePixels": 27400,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "file-unknown",
+    "size": 48,
+    "transparentPixels": 1290,
+    "visiblePixels": 1014,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "file-unknown",
+    "size": 32,
+    "transparentPixels": 577,
+    "visiblePixels": 447,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "file-unknown",
+    "size": 24,
+    "transparentPixels": 307,
+    "visiblePixels": 269,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "glb",
+    "size": 512,
+    "transparentPixels": 158154,
+    "visiblePixels": 103990,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "glb",
+    "size": 256,
+    "transparentPixels": 39416,
+    "visiblePixels": 26120,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "glb",
+    "size": 48,
+    "transparentPixels": 1323,
+    "visiblePixels": 981,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "glb",
+    "size": 32,
+    "transparentPixels": 585,
+    "visiblePixels": 439,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "glb",
+    "size": 24,
+    "transparentPixels": 308,
+    "visiblePixels": 268,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "gltf",
+    "size": 512,
+    "transparentPixels": 183660,
+    "visiblePixels": 78484,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "gltf",
+    "size": 256,
+    "transparentPixels": 45556,
+    "visiblePixels": 19980,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "gltf",
+    "size": 48,
+    "transparentPixels": 1497,
+    "visiblePixels": 807,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "gltf",
+    "size": 32,
+    "transparentPixels": 639,
+    "visiblePixels": 385,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "gltf",
+    "size": 24,
+    "transparentPixels": 337,
+    "visiblePixels": 239,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "material",
+    "size": 512,
+    "transparentPixels": 156136,
+    "visiblePixels": 106008,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "material",
+    "size": 256,
+    "transparentPixels": 38874,
+    "visiblePixels": 26662,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "material",
+    "size": 48,
+    "transparentPixels": 1328,
+    "visiblePixels": 976,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "material",
+    "size": 32,
+    "transparentPixels": 574,
+    "visiblePixels": 450,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "material",
+    "size": 24,
+    "transparentPixels": 319,
+    "visiblePixels": 257,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "obj",
+    "size": 512,
+    "transparentPixels": 171589,
+    "visiblePixels": 90555,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "obj",
+    "size": 256,
+    "transparentPixels": 42747,
+    "visiblePixels": 22789,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "obj",
+    "size": 48,
+    "transparentPixels": 1454,
+    "visiblePixels": 850,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "obj",
+    "size": 32,
+    "transparentPixels": 632,
+    "visiblePixels": 392,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "obj",
+    "size": 24,
+    "transparentPixels": 348,
+    "visiblePixels": 228,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "texture",
+    "size": 512,
+    "transparentPixels": 177970,
+    "visiblePixels": 84174,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "texture",
+    "size": 256,
+    "transparentPixels": 44330,
+    "visiblePixels": 21206,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "texture",
+    "size": 48,
+    "transparentPixels": 1505,
+    "visiblePixels": 799,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "texture",
+    "size": 32,
+    "transparentPixels": 654,
+    "visiblePixels": 370,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "texture",
+    "size": 24,
+    "transparentPixels": 361,
+    "visiblePixels": 215,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "unity",
+    "size": 512,
+    "transparentPixels": 189470,
+    "visiblePixels": 72674,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "unity",
+    "size": 256,
+    "transparentPixels": 47112,
+    "visiblePixels": 18424,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "unity",
+    "size": 48,
+    "transparentPixels": 1567,
+    "visiblePixels": 737,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "unity",
+    "size": 32,
+    "transparentPixels": 667,
+    "visiblePixels": 357,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "unity",
+    "size": 24,
+    "transparentPixels": 363,
+    "visiblePixels": 213,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "unreal",
+    "size": 512,
+    "transparentPixels": 169074,
+    "visiblePixels": 93070,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "unreal",
+    "size": 256,
+    "transparentPixels": 41976,
+    "visiblePixels": 23560,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "unreal",
+    "size": 48,
+    "transparentPixels": 1392,
+    "visiblePixels": 912,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "unreal",
+    "size": 32,
+    "transparentPixels": 595,
+    "visiblePixels": 429,
+    "boundaryPixels": 0
+  },
+  {
+    "icon": "unreal",
+    "size": 24,
+    "transparentPixels": 329,
+    "visiblePixels": 247,
+    "boundaryPixels": 0
+  }
+]

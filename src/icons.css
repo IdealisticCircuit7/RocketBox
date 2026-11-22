@@ -1,0 +1,67 @@
+/* OCSIS icon contract: 24-unit grid, 1.7-unit stroke, currentColor + custom masked PNGs. */
+:root { --rocket-icon-tilt: 45deg; }
+.ocsis-icon { display: inline-block; width: 20px; height: 20px; flex: 0 0 auto; vertical-align: middle; overflow: visible; }
+.ocsis-custom-icon { background-color: currentColor; -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; pointer-events: none; transition: color 180ms ease, filter 180ms ease, transform 180ms ease, opacity 180ms ease; }
+.ocsis-custom-icon--rocket { -webkit-mask-image: url('./assets/icons/rocket-icon.png'); mask-image: url('./assets/icons/rocket-icon.png'); transform: rotate(var(--rocket-icon-tilt, 45deg)); transform-origin: center; }
+.ocsis-custom-icon--library { -webkit-mask-image: url('./assets/icons/library-icon.png'); mask-image: url('./assets/icons/library-icon.png'); }
+.ocsis-custom-icon--settings { -webkit-mask-image: url('./assets/icons/settings-icon.png'); mask-image: url('./assets/icons/settings-icon.png'); transform-origin: center; }
+:is(.btn-primary,.btn-ghost,.back-home) { display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
+:is(.btn-primary,.btn-ghost) > .ocsis-icon { width: 18px; height: 18px; }
+.back-home .ocsis-icon { width: 17px; height: 17px; }
+.nav-button > .ocsis-icon { width: 21px; height: 21px; color: color-mix(in srgb, var(--ui-accent) 26%, #9cb4cc); transition: color 180ms ease, filter 180ms ease, transform 180ms ease; }
+.layout-top .nav-button > .ocsis-icon { width: 19px; height: 19px; }
+.compact-menu .nav-button > .ocsis-icon { width: 18px; height: 18px; }
+.nav-button:is(:hover,:focus-visible,[aria-current]) > .ocsis-icon { color: var(--ui-accent); filter: drop-shadow(0 0 5px color-mix(in srgb,var(--ui-accent) 25%,transparent)); }
+:is(.nav-button,.btn-ghost,.settings-card-btn):not(:disabled):hover > .ocsis-custom-icon--settings { transform: scale(1.05); }
+.nav-settings > label.eyebrow { display: flex; align-items: center; gap: 7px; }
+.nav-settings > label.eyebrow .ocsis-icon, .motion-option .ocsis-icon { width: 15px; height: 15px; color: #90a7c2; }
+.layout-top .nav-settings > label.eyebrow { display: none; }
+.motion-option { flex-wrap: wrap; }
+.launch-card > :is(.ocsis-icon, .launch-icon) { color: var(--card-color); stroke-width: 1.7; }
+.launch-card > .ocsis-custom-icon {
+  opacity: .98;
+  background-color: var(--card-color);
+  background-image: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--card-color) 32%, #ffffff) 0%,
+    var(--card-color) 56%,
+    color-mix(in srgb, var(--card-color) 76%, #061326) 100%
+  );
+  filter: drop-shadow(0 0 12px color-mix(in srgb, var(--card-color) 34%, transparent));
+}
+.launch-card > .ocsis-custom-icon--rocket { width: clamp(62px, 4.9vw, 70px); height: clamp(62px, 4.9vw, 70px); }
+.launch-card:not(:disabled):hover > .ocsis-custom-icon {
+  opacity: 1;
+  background-image: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--card-color) 20%, #ffffff) 0%,
+    color-mix(in srgb, var(--card-color) 88%, #ffffff) 58%,
+    var(--card-color) 100%
+  );
+  filter: drop-shadow(0 0 16px color-mix(in srgb, var(--card-color) 52%, transparent));
+}
+@media (max-width:650px) { .launch-card > .ocsis-custom-icon--rocket { width: 46px; height: 46px; } }
+@media (max-height:620px) and (min-width:651px) { .launch-card > .ocsis-custom-icon--rocket { width: 48px; height: 48px; } }
+.launch-card .card-arrow { display: flex; align-items: center; justify-content: center; }
+.launch-card .card-arrow > .ocsis-icon { width: 25px; height: 25px; margin: 0; stroke-width: 1.7; }
+.folder-symbol.ocsis-icon { width: 36px; height: 36px; filter: drop-shadow(0 0 7px #00d4ff16); }
+.folder-actions button { display: inline-flex; align-items: center; justify-content: center; gap: 5px; }
+.folder-actions .ocsis-icon { width: 15px; height: 15px; }
+.empty-orbit > .ocsis-icon { width: 34px; height: 34px; }
+.sia-panel summary > .ocsis-icon { width: 18px; height: 18px; margin: 0 8px; color: #77dff4; }
+.tag-section label > .ocsis-icon { width: 17px; height: 17px; color: #bb91ee; }
+.tag-section label { position: relative; }
+.tag-section label > .ocsis-icon { position: absolute; right: 0; bottom: 0; }
+.tag-chip button { display: inline-flex; align-items: center; justify-content: center; }
+.tag-chip button .ocsis-icon { width: 13px; height: 13px; }
+.field-help > .ocsis-icon { width: 14px; height: 14px; margin-right: 4px; color: #96acc5; }
+.wire-cube > .ocsis-icon { width: 108px; height: 108px; stroke-width: .8; }
+.nautia-development > .ocsis-icon { color: #a3ddf9; width: 25px; height: 25px; }
+.nautia-feature-icon > .ocsis-icon { width: 27px; height: 27px; }
+.nautia-actions .ocsis-icon { width: 17px; height: 17px; }
+.nautia-conversation-empty > .ocsis-icon { color: #9d99bf; width: 28px; height: 28px; }
+.nautia-btn-cta > .ocsis-custom-icon { flex: none; }
+:disabled .ocsis-icon { filter: none !important; }
+:disabled .ocsis-custom-icon { opacity: 0.5; filter: none !important; }
+.no-lighting .ocsis-icon { filter: none !important; }
+@media (prefers-reduced-motion:reduce) { .ocsis-icon { transition: none !important; } }

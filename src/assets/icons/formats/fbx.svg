@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64" fill="none">
+  <title>FBX — RocketBox wireframe cube</title>
+  <defs>
+    <linearGradient id="edges" x1="11" y1="8" x2="53" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8FAFF"/>
+      <stop offset=".46" stop-color="#5BE3FA"/>
+      <stop offset="1" stop-color="#249DCB"/>
+    </linearGradient>
+    <linearGradient id="vertices" x1="0" y1="8" x2="0" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECFEFF"/>
+      <stop offset="1" stop-color="#79E9FF"/>
+    </linearGradient>
+  </defs>
+  <!-- Low-opacity edge halo stays inside the transparent icon margins. -->
+  <path d="M32 8 53 20 53 44 32 56 11 44 11 20Z M11 20 32 32 53 20 M32 32V56"
+        stroke="#34CFF1" stroke-opacity=".16" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 8 53 20 53 44 32 56 11 44 11 20Z M11 20 32 32 53 20 M32 32V56"
+        stroke="url(#edges)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="url(#vertices)" stroke="#1886AF" stroke-width=".65">
+    <circle cx="32" cy="8" r="2.2"/>
+    <circle cx="53" cy="20" r="2.2"/>
+    <circle cx="53" cy="44" r="2.2"/>
+    <circle cx="32" cy="56" r="2.2"/>
+    <circle cx="11" cy="44" r="2.2"/>
+    <circle cx="11" cy="20" r="2.2"/>
+    <circle cx="32" cy="32" r="2.2"/>
+  </g>
+</svg>
